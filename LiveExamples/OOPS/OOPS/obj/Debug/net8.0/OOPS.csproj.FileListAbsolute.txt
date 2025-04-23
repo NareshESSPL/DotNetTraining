@@ -1,0 +1,11 @@
+D:\ESSPL\.Net\OOPS\OOPS\bin\Debug\net8.0\OOPS.deps.json
+D:\ESSPL\.Net\OOPS\OOPS\bin\Debug\net8.0\OOPS.dll
+D:\ESSPL\.Net\OOPS\OOPS\bin\Debug\net8.0\OOPS.pdb
+D:\ESSPL\.Net\OOPS\OOPS\obj\Debug\net8.0\OOPS.GeneratedMSBuildEditorConfig.editorconfig
+D:\ESSPL\.Net\OOPS\OOPS\obj\Debug\net8.0\OOPS.AssemblyInfoInputs.cache
+D:\ESSPL\.Net\OOPS\OOPS\obj\Debug\net8.0\OOPS.AssemblyInfo.cs
+D:\ESSPL\.Net\OOPS\OOPS\obj\Debug\net8.0\OOPS.csproj.CoreCompileInputs.cache
+D:\ESSPL\.Net\OOPS\OOPS\obj\Debug\net8.0\OOPS.dll
+D:\ESSPL\.Net\OOPS\OOPS\obj\Debug\net8.0\refint\OOPS.dll
+D:\ESSPL\.Net\OOPS\OOPS\obj\Debug\net8.0\OOPS.pdb
+D:\ESSPL\.Net\OOPS\OOPS\obj\Debug\net8.0\ref\OOPS.dll
