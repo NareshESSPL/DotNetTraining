@@ -1,0 +1,22 @@
+Create a Vehicle class with following feature
+
+1. One readonly property for Vehicle Name, Fuel type
+
+1. One const for vehicle Production Line number as it must have a hardcoded value and cannot be changed.
+
+3 One property with only get so that it will only return Vehicle Version
+
+4.constructor (constructor1) will have a input parameter for vehicle name to be used to set Vehicle Name.
+
+5. Another constructor (constructor2) to get Vehicle Name and Fuel type to be used to set Vehicle Name and Fuel type.
+
+6.Call constructor2 from constructor1 using "this" keyword
+
+
+Create another Vehicle limited edition class derived from Vehicle class
+
+   Another constructor (constructor3) to get Vehicle Name and Fuel type to be used to set Vehicle Name and Fuel type.
+
+6.Call constructor2 from constructor3 using "base" keyword
+
+
