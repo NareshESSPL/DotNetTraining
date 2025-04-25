@@ -19,9 +19,13 @@ namespace OOPSDebug
 
         public void Iterate()
         {
-            string[] strArr = new string[4] { "sdbsa", "sdfsd", "sdfsdf", "sfdsf"};
+            string[] strArr = new string[5] { "sdbsa", "sdfsd", "sdfsdf", "sfdsf", "sasadsa"};
 
-            for (int i = 0; i < 4; i++)
+            var temp = 123;
+
+            var temp2 = 7777;
+
+            for (int i = 0; i < 10; i++)
             {
                 Console.WriteLine(strArr[i]);
             }
@@ -47,6 +51,7 @@ namespace OOPSDebug
 
     public class TestbaseTypes
     {
+        public string AppName { get; set; }
         public void Test()
         {
             IModel objOrder = new Order();

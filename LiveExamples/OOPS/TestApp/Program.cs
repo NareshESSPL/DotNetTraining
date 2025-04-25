@@ -1,4 +1,6 @@
 ﻿using Businesslayer;
+using OOPS;
+using OOPSDebug;
 
 namespace TestApp
 {
@@ -6,8 +8,14 @@ namespace TestApp
     {
         static void Main(string[] args)
         {
-            BaseClass baseClass = new BaseClass();
+            //BaseClass baseClass = new BaseClass();
             //baseClass.ConnectToDB();
+
+            //TestbaseTypes testbaseTypes = new TestbaseTypes();
+            //testbaseTypes.Test();
+
+            TestExec testExec = new TestExec();
+            testExec.TestDB();
 
             Console.WriteLine("Hello, World!");
         }
