@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Encapsulation
 {
-    public class BaseClass
+    public class BaseClassExample
     {
         public string FullName { get; set; }
         public string AppName { get; } = "Data";
@@ -17,12 +17,12 @@ namespace Encapsulation
         //can be set inside a constructor but not in any other places
         public readonly bool ReadyForRelease;
 
-        public BaseClass()
+        public BaseClassExample()
         {
             ReadyForRelease = false;
         }
 
-        public BaseClass(bool readyForRelease)
+        public BaseClassExample(bool readyForRelease)
         {
             ReadyForRelease = readyForRelease;
         }
@@ -68,7 +68,7 @@ namespace Encapsulation
         }
     }
 
-    public class ChildClass : BaseClass
+    public class ChildClass : BaseClassExample
     {
         public string ChildName { get; set; }
 
