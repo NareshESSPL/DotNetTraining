@@ -1,3 +1,9 @@
+first time setup
+--------------
+git clone <clone url>
+cd <folder>
+
+----------------
 git branch
 git checkout <yourbranchname>
 git pull origin main
