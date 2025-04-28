@@ -1,0 +1,6 @@
+git branch
+git checkout <yourbranchname>
+git pull origin main
+git add .
+git commit -m ""
+git push origin <yourbranchname>
