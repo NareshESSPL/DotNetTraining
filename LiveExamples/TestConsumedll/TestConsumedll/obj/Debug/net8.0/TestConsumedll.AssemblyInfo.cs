@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TestConsumedll")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c34d97f0135924ce77b2c9d9cdd1aa25a09c520")]
 [assembly: System.Reflection.AssemblyProductAttribute("TestConsumedll")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TestConsumedll")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
