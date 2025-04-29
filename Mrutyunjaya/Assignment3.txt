@@ -1,0 +1,64 @@
+using System;
+
+public class Vehicle
+{
+    public readonly string VehicleName;
+    public readonly string FuelType;
+    public const int ProductionLineNumber = 101;
+    public string VehicleVersion { get; } = "1.0";
+
+    public Vehicle(string vehicleName)
+        : this(vehicleName, "Unknown")
+    {
+    }
+
+    public Vehicle(string vehicleName, string fuelType)
+    {
+        VehicleName = vehicleName;
+        FuelType = fuelType;
+    }
+
+    public virtual void DisplayInfo()
+    {
+        Console.WriteLine("Vehicle Name: " + VehicleName);
+        Console.WriteLine("Fuel Type " + FuelType);
+        Console.WriteLine("Vehicle Version: " + VehicleVersion);
+        Console.WriteLine("Production Line Number: " + ProductionLineNumber);
+    }
+}
+
+public class VehicleLimitedEdition : Vehicle
+{
+    public VehicleLimitedEdition(string vehicleName, string fuelType)
+        : base(vehicleName, fuelType)
+    {
+    }
+
+    public override void DisplayInfo()
+    {
+        base.DisplayInfo();
+        Console.WriteLine("This is a Limited Edition Vehicle.");
+    }
+}
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Vehicle vehicle1 = new Vehicle("Standard Car");
+        Console.WriteLine("Vehicle 1:");
+        vehicle1.DisplayInfo();
+
+        Console.WriteLine();
+
+        Vehicle vehicle2 = new Vehicle("SUV", "Diesel");
+        Console.WriteLine("Vehicle 2:");
+        vehicle2.DisplayInfo();
+
+        Console.WriteLine();
+
+        VehicleLimitedEdition limitedEdition = new VehicleLimitedEdition("Sports Car", "Petrol");
+        Console.WriteLine("Limited Edition Vehicle:");
+        limitedEdition.DisplayInfo();
+    }
+}
