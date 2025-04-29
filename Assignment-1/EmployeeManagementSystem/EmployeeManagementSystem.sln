@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementSystem", "EmployeeManagementSystem\EmployeeManagementSystem.csproj", "{18FB4534-F127-4BD6-878A-3D01EB260B1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMSTest", "EMSTest\EMSTest.csproj", "{1CB4D853-7424-449D-AEE2-D27DDA52A564}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18FB4534-F127-4BD6-878A-3D01EB260B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18FB4534-F127-4BD6-878A-3D01EB260B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18FB4534-F127-4BD6-878A-3D01EB260B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18FB4534-F127-4BD6-878A-3D01EB260B1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CB4D853-7424-449D-AEE2-D27DDA52A564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CB4D853-7424-449D-AEE2-D27DDA52A564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CB4D853-7424-449D-AEE2-D27DDA52A564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CB4D853-7424-449D-AEE2-D27DDA52A564}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {677BAA50-EABA-4D6E-B786-FC0E1C1BF5E8}
+	EndGlobalSection
+EndGlobal
