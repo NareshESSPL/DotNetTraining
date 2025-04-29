@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlinePaymentSystem", "Assignment2\OnlinePaymentSystem.csproj", "{A98AA28A-2310-4B40-8F66-6ED748353DBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OPSTest", "OPSTest\OPSTest.csproj", "{37B9BE28-80D9-4233-83BE-6CF901FB8324}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A98AA28A-2310-4B40-8F66-6ED748353DBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A98AA28A-2310-4B40-8F66-6ED748353DBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A98AA28A-2310-4B40-8F66-6ED748353DBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A98AA28A-2310-4B40-8F66-6ED748353DBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37B9BE28-80D9-4233-83BE-6CF901FB8324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37B9BE28-80D9-4233-83BE-6CF901FB8324}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37B9BE28-80D9-4233-83BE-6CF901FB8324}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37B9BE28-80D9-4233-83BE-6CF901FB8324}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0AFB6078-8059-46C4-AAE7-E6241B7994E7}
+	EndGlobalSection
+EndGlobal
