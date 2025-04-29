@@ -1,0 +1,6 @@
+git branch
+git checkout Manjusha
+git pull origin main
+git add .
+git commit -m ""
+git push origin <your branch name>
