@@ -1,0 +1,16 @@
+Create Job Scheduler App
+
+
+Create a interface IJob, it has a method called GetSchedule() with ReturnType as Schdeule.
+
+Schedule should have property ScheduleID and TrigerTime as datetime
+
+Create another interface called ILocalJob with method Run()
+
+IJob is parent for ILocalJob 
+
+Create a abstract method called Scheduler extending ILocalJob with constructor to accept a ILogger
+type
+
+
+
