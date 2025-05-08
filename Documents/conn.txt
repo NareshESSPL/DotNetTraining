@@ -1,1 +1,1 @@
-"Data Source=servername;Initial Catalog=TestApp;Integrated Security=SSP")
+Data Source = Server Name; Initial Catalog = TestApp; Integrated Security = SSPI;TrustServerCertificate = True
