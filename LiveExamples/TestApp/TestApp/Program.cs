@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
+
 namespace TestApp
 {
     public class Program
@@ -6,10 +9,20 @@ namespace TestApp
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            //To use session add this
+            builder.Services.AddSession();
+
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options => options.LoginPath = "/Account/Login");
+
+
+            builder.Services.AddAuthorization();
+
             var app = builder.Build();
+            app.UseSession();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())

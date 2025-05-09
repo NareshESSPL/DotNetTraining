@@ -52,7 +52,7 @@ namespace TestApp.DataLayer
         {
             using (var sqlCon = new SqlConnection(_connectionstring))
             {
-                using(var sqlCmd = new SqlCommand("AddEmployee", sqlCon))
+                using (var sqlCmd = new SqlCommand("AddEmployee", sqlCon))
                 {
                     sqlCmd.CommandType = CommandType.StoredProcedure;
 
@@ -95,5 +95,68 @@ namespace TestApp.DataLayer
 
             return employee;
         }
+
+        public (List<Employee>, List<GradeViewModel>) GetEmployeesAndGrades()
+        {
+            var employees = new List<Employee>();
+            var grades = new List<GradeViewModel>();
+
+            using (var sqlCon = new SqlConnection(_connectionstring))
+            {
+                using (var sqlCmd = new SqlCommand("sp_GetEmployeeAndGrade", sqlCon))
+                {
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                    sqlCon.Open();
+
+                    var reader = sqlCmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        var employee = new Employee();
+                        employee.Id = reader.GetInt32("Id");
+                        employee.Name = reader.GetString("Name");
+                        employee.Age = reader.GetInt32("Age");
+                        employee.Gender = reader.GetInt32("Gender");
+
+                        employees.Add(employee);
+                    }
+
+                    reader.NextResult();
+
+                    while (reader.Read())
+                    {
+                        var grade = new GradeViewModel();
+                        grade.Id = reader.GetInt32("Id");
+                        grade.Grade = reader.GetString("Grade");
+
+                        grades.Add(grade);
+                    }
+                }
+            }
+
+            return (employees, grades);
+        }
+        public DataSet GetEmployeesAndGradesInDs()
+        {
+            using (var sqlCon = new SqlConnection(_connectionstring))
+            {
+                using (var sqlCmd = new SqlCommand("sp_GetEmployeeAndGrade", sqlCon))
+                {
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                    sqlCon.Open();
+
+                    using (var adp = new SqlDataAdapter(sqlCmd))
+                    {
+                        var ds = new DataSet();
+                        adp.Fill(ds);
+
+                        return ds;
+                    }
+                }
+            }
+        }
+
     }
 }
