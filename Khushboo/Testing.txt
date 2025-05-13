@@ -1,7 +1,0 @@
-
-git branch
-git checkout <your branch name>
-git pull origin
-git add <file name>
-git commit -m Khushboo
-git push origin <branch name>
