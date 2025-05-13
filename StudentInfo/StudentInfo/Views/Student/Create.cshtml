@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Create";
+}
+
+@model DTO.Models.Student
+
+<h1>Student Details</h1>
+
+<div style="width: fit-content">
+    @using (Html.BeginForm("SaveStudent", "Student", FormMethod.Post))
+    {
+        <div>
+            <div>
+                @Html.LabelFor(m => m.StudentName)
+                @Html.TextBoxFor(m => m.StudentName, new { @class = "form-control", placeholder = "Enter Name" })
+                @Html.ValidationMessageFor(m => m.StudentName, "", new { @class = "text-danger" })
+            </div>
+
+            <div>
+                @Html.LabelFor(m => m.StudentAge)
+                @Html.TextBoxFor(m => m.StudentAge, new { @class = "form-control", placeholder = "Enter Age" })
+                @Html.ValidationMessageFor(m => m.StudentAge, "", new { @class = "text-danger" })
+            </div>
+
+            <div>
+                @Html.LabelFor(m => m.StudentBirthday)
+                @Html.TextBoxFor(m => m.StudentBirthday, new { @class = "form-control", placeholder = "Enter Birthday" })
+                @Html.ValidationMessageFor(m => m.StudentBirthday, "", new { @class = "text-danger" })
+            </div>
+
+            <div>
+                @Html.LabelFor(m => m.StudentEmailId)
+                @Html.TextBoxFor(m => m.StudentEmailId, new { @class = "form-control", placeholder = "Enter Email" })
+                @Html.ValidationMessageFor(m => m.StudentEmailId, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                <label class="fw-bold">Gender</label><br>
+                @if (ViewData["StudGen"] is List<SelectListItem> genderList)
+                {
+                    foreach (var gender in genderList)
+                    {
+                        <div class="form-check form-check-inline">
+                            @Html.RadioButtonFor(m => m.StudentGender, gender.Value, new { @class = "form-check-input" })
+                            <label class="form-check-label">@gender.Text</label>
+                        </div>
+                    }
+                }
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    }
+</div>

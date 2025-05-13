@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentInfo", "StudentInfo\StudentInfo.csproj", "{861359F7-8664-4804-BD67-FF8CCEEC0A86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{B132CF8B-C545-4FDD-9162-48EC6B030239}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{F7F014AD-F776-4328-BD4D-F143BAD5FE3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{861359F7-8664-4804-BD67-FF8CCEEC0A86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{861359F7-8664-4804-BD67-FF8CCEEC0A86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{861359F7-8664-4804-BD67-FF8CCEEC0A86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{861359F7-8664-4804-BD67-FF8CCEEC0A86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B132CF8B-C545-4FDD-9162-48EC6B030239}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B132CF8B-C545-4FDD-9162-48EC6B030239}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B132CF8B-C545-4FDD-9162-48EC6B030239}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B132CF8B-C545-4FDD-9162-48EC6B030239}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7F014AD-F776-4328-BD4D-F143BAD5FE3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7F014AD-F776-4328-BD4D-F143BAD5FE3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7F014AD-F776-4328-BD4D-F143BAD5FE3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7F014AD-F776-4328-BD4D-F143BAD5FE3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1F3D461A-1BCD-45D9-B751-985179FD7B32}
+	EndGlobalSection
+EndGlobal

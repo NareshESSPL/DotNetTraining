@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Edit";
+}
+
+@model DTO.Models.Student
+
+<h2>Edit Student</h2>
+
+<form asp-action="Edit" method="post">
+    @Html.HiddenFor(m => m.StudentRegistrationId)
+
+    <div class="mb-3">
+        <label class="fw-bold">Name:</label>
+        @Html.TextBoxFor(m => m.StudentName, new { @class = "form-control", placeholder = "Enter Name" })
+        @Html.ValidationMessageFor(m => m.StudentName, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="mb-3">
+        <label class="fw-bold">Age:</label>
+        @Html.TextBoxFor(m => m.StudentAge, new { @class = "form-control", placeholder = "Enter Age" })
+        @Html.ValidationMessageFor(m => m.StudentAge, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="mb-3">
+        <label class="fw-bold">Email ID:</label>
+        @Html.TextBoxFor(m => m.StudentEmailId, new { @class = "form-control", placeholder = "Enter Email" })
+        @Html.ValidationMessageFor(m => m.StudentEmailId, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="mb-3">
+        <label class="fw-bold">Birthday:</label>
+        @Html.TextBoxFor(m => m.StudentBirthday, new { @class = "form-control", placeholder = "Enter Birthday (YYYY-MM-DD)" })
+        @Html.ValidationMessageFor(m => m.StudentBirthday, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="mb-3">
+        <label class="fw-bold">Gender:</label>
+        @Html.DropDownListFor(m => m.StudentGender, ViewData["StudGen"] as List<SelectListItem>, "Select Gender", new { @class = "form-select" })
+        @Html.ValidationMessageFor(m => m.StudentGender, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="mt-3">
+        <button type="submit" asp-action="SaveStudent" class="btn btn-success">Save</button>
+    </div>
+
+</form>

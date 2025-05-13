@@ -1,0 +1,26 @@
+﻿<html>
+<head>
+    <title>Test page</title>
+    <script type="text/javascript">
+        function Validate() {
+            //debugger;
+            if (document.getElementById('txtName').value == '') {
+                alert('Please enter firstname');
+
+                return false
+            }
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" id="txtName" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" onclick="return Validate()" /></td>
+        </tr>
+    </table>
+</body>
+</html>
