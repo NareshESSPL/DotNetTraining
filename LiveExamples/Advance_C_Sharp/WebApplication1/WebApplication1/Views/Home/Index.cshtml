@@ -1,0 +1,36 @@
+﻿@* @{ *@
+@*     ViewData["Title"] = "Home Page"; *@
+@* } *@
+
+@* <div class="text-center"> *@
+@*     <h1 class="display-4">Welcome</h1> *@
+@*     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p> *@
+@* </div> *@
+
+@* data binding *@
+
+@model IEnumerable<WebApplication1.DTO.Person>/// ican return stack ,list and etc .
+
+<h1>Table Persons</h1>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+                <th>Id</th>
+                <th>Name</th>
+            @* <th>Age</th> *@
+            @* <th>Email</th>*@
+        </tr>
+    </thead>
+<tbody>
+    @foreach(var person in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(m => person.Id)</td> 
+	        <td>@Html.DisplayFor(m => person.Name )</td>
+            @* <td>@Html.DisplayFor(m => person.Age)</td> *@
+            @* <td>@Html.DisplayFor(m => person.Email)</td> *@
+        </tr>
+    }
+</tbody>
+</table>

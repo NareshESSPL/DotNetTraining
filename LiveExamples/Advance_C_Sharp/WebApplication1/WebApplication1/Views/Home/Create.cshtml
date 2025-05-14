@@ -1,0 +1,32 @@
+﻿
+@model WebApplication1.DTO.Person
+
+<h1>Person Details</h1>
+<div style="width:80%;">
+
+	@using (Html.BeginForm("Submit", "Home", FormMethod.Post)){
+	@Html.ValidationSummary(false,"")
+
+		<div>
+			@Html.LabelFor(m => m.Age)
+			@Html.TextBoxFor(m =>m.Age,new{ @class = "form-control",placeholder = "EnterAge"} )
+			@Html.ValidationMessageFor(model=>model.Age,"",new{@class = "text-danger" })@* lamdaa function *@
+		</div>
+		<div>
+			@Html.LabelFor(m => m.Email)
+			@Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "EnterEmail" })
+			@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })@* lamdaa function *@
+		</div>
+		<div>
+			@Html.LabelFor(m => m.Name)
+			@Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "EnterName" })
+			@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })@* lamdaa function *@
+		</div>
+	<br />
+	<div>
+		
+		<input type="submit" value="save"/>
+	</div>
+	}
+</div>
+	

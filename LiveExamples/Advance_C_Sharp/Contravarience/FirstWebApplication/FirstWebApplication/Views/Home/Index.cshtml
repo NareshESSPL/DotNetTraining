@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Signup Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .form-group.inline label {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+    </style>
+    <script>
+        function validateForm(event) {
+            const nameInput = document.getElementById("name").value.trim();
+            if (nameInput === "") {
+                alert("Please enter the user name.");
+                event.preventDefault(); // Prevent form submission
+                return false;
+            }
+            // No alert if name is filled
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Signup Form</h2>
+        <form>
+            <!-- Name -->
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <!-- Gender Dropdown -->
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="">-- Select Gender --</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <!-- Marital Status Radio Buttons -->
+            <div class="form-group">
+                <label>Marital Status:</label>
+                <div class="form-group inline">
+                    <label><input type="radio" name="marital" value="single">Single</label>
+                    <label><input type="radio" name="marital" value="married">Married</label>
+                </div>
+            </div>
+
+            <!-- Has Passport Checkbox -->
+            <div class="form-group">
+                <label><input type="checkbox" name="passport"> Has Passport</label>
+            </div>
+
+            <!-- Hobbies (Multiple Checkboxes) -->
+            <div class="form-group">
+                <label>Hobbies:</label>
+                <div class="form-group inline">
+                    <label><input type="checkbox" name="hobbies" value="reading">Reading</label>
+                    <label><input type="checkbox" name="hobbies" value="traveling">Traveling</label>
+                    <label><input type="checkbox" name="hobbies" value="sports">Sports</label>
+                    <label><input type="checkbox" name="hobbies" value="music">Music</label>
+                </div>
+            </div>
+
+            <!-- Description Textarea -->
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" placeholder="Tell us about yourself..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
+

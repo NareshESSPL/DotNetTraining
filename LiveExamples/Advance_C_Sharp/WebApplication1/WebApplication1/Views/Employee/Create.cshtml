@@ -1,0 +1,49 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model WebApplication1.DTO.Employees
+
+<h1>Employees Details</h1>
+<div style="width:80%;">
+
+	@using (Html.BeginForm("Submit", "Employee", FormMethod.Post))
+	{
+		@Html.ValidationSummary(false, "")
+		<div>
+			@Html.LabelFor(m => m.EmployeeName)
+			@Html.TextBoxFor(m => m.EmployeeName, new { @class = "form-control", placeholder = "EnterName" })
+			@Html.ValidationMessageFor(model => model.EmployeeName, "", new { @class = "text-danger" })@* lamdaa function *@
+		</div>
+		<div>
+			@Html.LabelFor(m => m.EmployeeAge)
+			@Html.TextBoxFor(m => m.EmployeeAge, new { @class = "form-control", placeholder = "EnterAge" })
+			@Html.ValidationMessageFor(model => model.EmployeeAge, "", new { @class = "text-danger" })@* lamdaa function *@
+		</div>
+
+		<br>
+
+		<div>
+			@* @Html.LabelFor(m => m.EmployeeGender) *@
+			@* <br /> *@
+			@* @Html.ValidationMessageFor(m => m.EmployeeGender, "", new {@class = "text-danger"}) *@
+			@* @Html.RadioButtonFor(m => m.EmployeeGender, "1")<span>Male</span> *@
+			@* @Html.RadioButtonFor(m => m.EmployeeGender, "2")<span>Female</span> *@
+			@* @Html.RadioButtonFor(m => m.EmployeeGender, "3")<span>Other</span> *@
+
+			@foreach (var gender in (List<SelectListItem>)ViewData["Gender"])
+			{
+				<label>
+					@Html.RadioButtonFor(m => m.EmployeeGender,@gender.Value) @gender.Text
+				</label>
+			}
+		</div>
+		<br />
+		<div>
+
+			<input type="submit" value="save" />
+		</div>
+	}
+</div>
