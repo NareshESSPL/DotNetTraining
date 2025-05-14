@@ -1,0 +1,37 @@
+﻿@model StudentInfo.Models.StudentModel
+
+<h2 class="text-2xl mb-4">Edit Student</h2>
+
+<form asp-action="Edit" method="post" class="space-y-4">
+    <input type="hidden" asp-for="StudentId" />
+
+    <div>
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="border rounded px-2 py-1" />
+    </div>
+
+    <div>
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" class="border rounded px-2 py-1" />
+    </div>
+
+    <div>
+        <label asp-for="DateOfBirth"></label>
+        <input asp-for="DateOfBirth" type="date" class="border rounded px-2 py-1" />
+    </div>
+
+    <div>
+        <label asp-for="Gender"></label>
+        <select asp-for="Gender" class="border rounded px-2 py-1">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+    </div>
+
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" type="email" class="border rounded px-2 py-1" />
+    </div>
+
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Save</button>
+</form>

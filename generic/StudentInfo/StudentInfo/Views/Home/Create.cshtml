@@ -1,0 +1,33 @@
+﻿@model StudentInfo.Models.StudentModel
+@{
+    Layout = "_Layout";
+    }
+
+<h2>Add Student</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label>First Name:</label>
+        <input asp-for="FirstName" />
+    </div>
+    <div>
+        <label>Last Name:</label>
+        <input asp-for="LastName" />
+    </div>
+    <div>
+        <label>Date of Birth:</label>
+        <input asp-for="DateOfBirth" type="date" />
+    </div>
+    <div>
+        <label asp-for="Gender"></label><br />
+        <label>Male</label>
+        <input type="radio" asp-for="Gender" value="M" />
+        <label>Female</label>
+        <input type="radio" asp-for="Gender" value="F" />
+    </div>
+    <div>
+        <label>Email:</label>
+        <input asp-for="Email" type="email" />
+    </div>
+    <button type="submit">Save</button>
+</form>
