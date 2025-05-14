@@ -1,0 +1,162 @@
+/* General Settings */
+html {
+    font-size: 14px;
+    background-color: #181818; /* Dark background for the whole page */
+    color: #e0e0e0; /* Light text color for contrast */
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* Body Settings */
+body {
+    margin-bottom: 60px;
+    background-color: #181818; /* Dark background for the body */
+    color: #e0e0e0; /* Light text color */
+    font-family: Arial, sans-serif;
+}
+
+/* Focused/Active Elements */
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* Table Styling */
+.table-container {
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .student-table th, .student-table td {
+        border: 1px solid #333; /* Darker border for a dark theme */
+        padding: 10px;
+        text-align: left;
+    }
+
+    .student-table th {
+        background-color: #2a2a2a; /* Darker background for table headers */
+        color: #f2f2f2; /* Light color for table headers */
+        font-weight: bold;
+    }
+
+    .student-table tr:nth-child(even) {
+        background-color: #333333; /* Darker background for even rows */
+    }
+
+    .student-table tr:hover {
+        background-color: #3a3a3a; /* Light hover effect */
+    }
+
+    .student-table td {
+        color: #e0e0e0; /* Light text for table rows */
+    }
+
+/* Button Styles */
+.btn {
+    padding: 10px 15px;
+    border: none;
+    text-decoration: none;
+    background-color: #4caf50; /* Green button background */
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-success {
+    background-color: #28a745; /* A darker green shade */
+}
+
+.btn:hover {
+    opacity: 0.8;
+    background-color: #218838; /* Slightly darker green on hover */
+}
+
+/* Form Styling */
+form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #2a2a2a; /* Dark form background */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+    form div {
+        margin-bottom: 15px;
+    }
+
+    form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #e0e0e0; /* Light color for labels */
+    }
+
+    form input {
+        width: 100%;
+        padding: 8px;
+        background-color: #3c3c3c; /* Dark input fields */
+        border: 1px solid #555; /* Dark border for input fields */
+        color: #e0e0e0; /* Light text inside input fields */
+        border-radius: 4px;
+    }
+
+    form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #28a745; /* Green button background */
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        form button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+/* Top Student Create Section */
+.top-student-create {
+    display: flex;
+    justify-content: space-between; /* space between items */
+    align-items: center; /* vertically center */
+    margin: 30px 20px 20px 20px;
+    color: #e0e0e0; /* Light text for headings */
+}
+
+/* Action Link for Create New Student */
+.create-btn {
+    background-color: #4caf50;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+    .create-btn:hover {
+        background-color: #388e3c; /* Darker green on hover */
+    }
+form.d-inline {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.actions{
+    display:flex;
+    justify-content:space-between;
+}
