@@ -1,0 +1,58 @@
+﻿@model StudentPortal.Models.Student
+<form asp-action="Edit" method="post" class="w-50 mx-auto p-4 border rounded shadow bg-light">
+    <h3 class="text-center mb-4 text-primary">Edit Product</h3>
+
+    <div class="form-group mb-3">
+        <label asp-for="FirstName" class="form-label fw-semibold"></label>
+        <input asp-for="FirstName" class="form-control" placeholder="Enter first name" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="LastName" class="form-label fw-semibold"></label>
+        <input asp-for="LastName" class="form-control" placeholder="Enter last name" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="DateOfBirth" class="form-label fw-semibold"></label>
+        <input asp-for="DateOfBirth" type="date" class="form-control" />
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Gender" class="form-label fw-semibold"></label>
+        <select asp-for="Gender" class="form-control">
+            <option value="">Select Gender</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select>
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Email" class="form-label fw-semibold"></label>
+        <input asp-for="Email" class="form-control" placeholder="Enter email address" type="email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="PhoneNumber" class="form-label fw-semibold"></label>
+        <input asp-for="PhoneNumber" class="form-control" placeholder="Enter phone number" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="EnrollmentDate" class="form-label fw-semibold"></label>
+        <input asp-for="EnrollmentDate" type="date" class="form-control" />
+        <span asp-validation-for="EnrollmentDate" class="text-danger"></span>
+    </div>
+
+    <input type="hidden" asp-for="StudentID" />
+
+    <div class="d-flex justify-content-between">
+        <button type="submit" class="btn btn-success px-4">Save</button>
+        <a asp-action="Index" class="btn btn-secondary px-4">Cancel</a>
+    </div>
+
+</form>

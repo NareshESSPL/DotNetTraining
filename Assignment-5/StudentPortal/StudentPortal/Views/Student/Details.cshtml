@@ -1,0 +1,38 @@
+﻿@model StudentPortal.Models.Student
+
+<h2 class="mb-4">Student Details</h2>
+
+<table class="table table-bordered table-striped w-75 mx-auto">
+    <tr>
+        <th>Student ID</th>
+        <td>@Model.StudentID</td>
+    </tr>
+    <tr>
+        <th>First Name</th>
+        <td>@Model.FirstName</td>
+    </tr>
+    <tr>
+        <th>Last Name</th>
+        <td>@Model.LastName</td>
+    </tr>
+    <tr>
+        <th>Date of Birth</th>
+        <td>@Model.DateOfBirth?.ToString("yyyy-MM-dd")</td>
+    </tr>
+    <tr>
+        <th>Gender</th>
+        <td>@Model.Gender</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>@Model.Email</td>
+    </tr>
+    <tr>
+        <th>Phone Number</th>
+        <td>@Model.PhoneNumber</td>
+    </tr>
+    <tr>
+        <th>Enrollment Date</th>
+        <td>@Model.EnrollmentDate?.ToString("yyyy-MM-dd")</td>
+    </tr>
+</table>
