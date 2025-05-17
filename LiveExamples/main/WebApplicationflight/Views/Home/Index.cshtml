@@ -1,0 +1,38 @@
+﻿@model List<main.Traveller>
+
+<h2>Traveller List</h2>
+
+<a asp-action="AddTraveller" class="btn btn-primary mb-3">Add Traveller</a>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Ticket No</th>
+            <th>Name</th>
+            <th>Seat No</th>
+            <th>Flight Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var traveller in Model)
+    {
+        <tr>
+            <td>@traveller.TicketNo</td>
+            <td>@traveller.Name</td>
+            <td>@traveller.SeatNo</td>
+            <td>@traveller.FlightName</td>
+            <td>
+               
+                <a asp-action="UpdateTraveller" asp-route-ticketNo="@traveller.TicketNo" class="btn btn-warning btn-sm">Update</a>
+                    <a asp-action="DeleteTraveller" asp-route-ticketNo="@traveller.TicketNo" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this traveller?');">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
