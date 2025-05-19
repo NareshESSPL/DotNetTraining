@@ -1,0 +1,160 @@
+﻿@page
+@model InvoiceApp.Pages.Invoices.EditModel
+
+<h2 class="text-center mb-3">Edit Invoice</h2>
+
+@if (!string.IsNullOrEmpty(Model.successMessage))
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>@Model.successMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<form method="post">
+    <div class="row g-2 mb-3">
+        <!-- Invoice Details -->
+        <div class="col-lg-6">
+            <div class="card h-100">
+                <div class="card-header">Invoice Details</div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Invoice No</label>
+                        <div class="col-sm-8">
+                            <input class="form-control-plaintext" readonly value="@Model.Invoice.Number" />
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Payment Status</label>
+                        <div class="col-sm-8">
+                            <select class="form-select" asp-for="InvoiceDto.Status">
+                                <option value="Pending">Pending</option>
+                                <option value="Paid">Paid</option>
+                            </select>
+                            <span asp-validation-for="InvoiceDto.Status" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Issue Date</label>
+                        <div class="col-sm-8">
+                            <input type="date" class="form-control" asp-for="InvoiceDto.IssueDate" />
+                            <span asp-validation-for="InvoiceDto.IssueDate" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Due Date</label>
+                        <div class="col-sm-8">
+                            <input type="date" class="form-control" asp-for="InvoiceDto.DueDate" />
+                            <span asp-validation-for="InvoiceDto.DueDate" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Client Details -->
+        <div class="col-lg-6">
+            <div class="card h-100">
+                <div class="card-header">Client Details</div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Client</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" asp-for="InvoiceDto.ClientName" />
+                            <span asp-validation-for="InvoiceDto.ClientName" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Email</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" asp-for="InvoiceDto.Email" />
+                            <span asp-validation-for="InvoiceDto.Email" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Phone</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" asp-for="InvoiceDto.Phone" />
+                            <span asp-validation-for="InvoiceDto.Phone" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Address</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" asp-for="InvoiceDto.Address" rows="3"></textarea>
+                            <span asp-validation-for="InvoiceDto.Address" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Details -->
+    <div class="card mb-3">
+        <div class="card-header">Service Details</div>
+        <div class="card-body">
+            <div class="row g-2">
+                <div class="col-lg-6">
+                    <label class="form-label">Service</label>
+                    <input class="form-control" asp-for="InvoiceDto.Service" />
+                    <span asp-validation-for="InvoiceDto.Service" class="text-danger"></span>
+                </div>
+
+                <div class="col-lg-2 col-sm-4">
+                    <label class="form-label">Quantity</label>
+                    <input type="number" class="form-control" min="0" step="1"
+                           asp-for="InvoiceDto.Quantity" id="quantityInput" />
+                    <span asp-validation-for="InvoiceDto.Quantity" class="text-danger"></span>
+                </div>
+
+                <div class="col-lg-2 col-sm-4">
+                    <label class="form-label">Unit Price</label>
+                    <input type="number" class="form-control" min="0" step="0.01"
+                           asp-for="InvoiceDto.UnitPrice" id="unitPriceInput" />
+                    <span asp-validation-for="InvoiceDto.UnitPrice" class="text-danger"></span>
+                </div>
+
+                <div class="col-lg-2 col-sm-4">
+                    <label class="form-label">Unit Place</label>
+                    <input type="number" class="form-control" step="0.01"
+                           asp-for="InvoiceDto.UnitPlace" />
+                    <span asp-validation-for="InvoiceDto.UnitPlace" class="text-danger"></span>
+                </div>
+
+                <div class="col-lg-2 col-sm-4">
+                    <label class="form-label">Total Price</label>
+                    <input class="form-control" id="totalPriceInput" readonly disabled />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-page="/Invoices/Index" class="btn btn-outline-primary">Cancel</a>
+    </div>
+</form>
+
+@section Scripts {
+    <script>
+        function calculateTotalPrice() {
+            const quantity = parseFloat(document.getElementById("quantityInput").value) || 0;
+            const unitPrice = parseFloat(document.getElementById("unitPriceInput").value) || 0;
+            const total = (quantity * unitPrice).toFixed(2);
+            document.getElementById("totalPriceInput").value = total;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            calculateTotalPrice();
+            document.getElementById("quantityInput").addEventListener("input", calculateTotalPrice);
+            document.getElementById("unitPriceInput").addEventListener("input", calculateTotalPrice);
+        });
+    </script>
+}

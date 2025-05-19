@@ -1,0 +1,19 @@
+﻿@page
+@model InvoiceApp.Pages.Invoices.DeleteModel
+@{
+    Layout = "_Layout";
+}
+
+<h2 class="text-center mb-3">Delete Invoice</h2>
+
+<div class="alert alert-danger">
+    Are you sure you want to delete Invoice #<strong>@Model.Invoice.Number</strong>?
+</div>
+
+<form method="post">
+    <input type="hidden" asp-for="Invoice.Number" />
+    <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-danger me-2">Delete</button>
+        <a class="btn btn-outline-primary" asp-page="/Invoices/Index">Cancel</a>
+    </div>
+</form>
