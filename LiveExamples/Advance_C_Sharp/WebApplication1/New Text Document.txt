@@ -1,0 +1,19 @@
+use TestAPP;
+go
+
+CREATE TABLE Employees (
+    EmployeeId INT identity(1,1) PRIMARY KEY,
+    EmployeeName VARCHAR(100),
+    Age INT,
+    Gender VARCHAR(10)
+);
+go 
+INSERT INTO Employees ( EmployeeName, Age, Gender)
+VALUES
+    ('Alice Johnson', 30, 'Female'),
+    ('Bob Smith', 45, 'Male'),
+    ('Charlie Lee', 28, 'Male'),
+    ('Diana Patel', 35, 'Female'),
+    ('Evan Thomas', 40, 'Other');
+
+select * from Employees
