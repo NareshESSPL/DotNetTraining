@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Data;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using TestApp.DataLayer;
@@ -30,13 +31,7 @@ namespace TestApp.Controllers
 
         public IActionResult Create()
         {
-            List<SelectListItem> gender = new List<SelectListItem>();
-            gender.Add(new SelectListItem("Male", "1"));
-            gender.Add(new SelectListItem("Female", "2"));
-            gender.Add(new SelectListItem("Others", "3"));
-
-            ViewData["Gender"] = gender;
-
+            SetViewData();
 
             return View();
         }
@@ -44,18 +39,40 @@ namespace TestApp.Controllers
         [HttpPost]
         public ActionResult Submit(Employee employee)
         {
+            ModelState.Remove(nameof(employee.Id));
+            ModelState.Remove(nameof(employee.FileName));
+            ModelState.Remove(nameof(employee.EmployeeImage));
+
             if (ModelState.IsValid)
             {
+                //Buffered Model Binding – Loads the entire file into memory before processing.
+                //TODO:
+                //Check if the file is an image
+                //Save the file to DB
+                if (employee.EmployeeImage != null && employee.EmployeeImage.Length > 0)
+                {
+                    var filename = Guid.NewGuid().ToString();
+                    var fileExtension = Path.GetExtension(employee.EmployeeImage.FileName);
+                    var fileFullName = string.Concat(filename, fileExtension);
+
+                    var filePath = Path.Combine("wwwroot/uploads/", fileFullName);
+
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        employee.EmployeeImage.CopyTo(stream);
+                    }
+
+                    //TO DO
+                    //store this in the DB
+                    employee.FileName = fileFullName;
+                }
+
                 _employeeDAL.AddEmployee(employee);
+
                 return RedirectToAction("Index"); // Redirect to the list of employee
             }
 
-            List<SelectListItem> gender = new List<SelectListItem>();
-            gender.Add(new SelectListItem("Male", "1"));
-            gender.Add(new SelectListItem("Female", "2"));
-            gender.Add(new SelectListItem("Others", "3"));
-
-            ViewData["Gender"] = gender;
+            SetViewData();
 
             return View("Create", employee); // If model is invalid, return the form with errors
         }
@@ -111,8 +128,25 @@ namespace TestApp.Controllers
                 grades.Add(grade);
             }
 
-            return View((employees, grades))
+            return View((employees, grades));
 
+        }
+
+        private void SetViewData()
+        {
+            List<SelectListItem> gender = new List<SelectListItem>();
+            gender.Add(new SelectListItem("Male", "1"));
+            gender.Add(new SelectListItem("Female", "2"));
+            gender.Add(new SelectListItem("Others", "3"));
+
+            ViewData["Gender"] = gender;
+
+            List<SelectListItem> benefit = new List<SelectListItem>();
+            benefit.Add(new SelectListItem("PF", "1"));
+            benefit.Add(new SelectListItem("Insurance", "2"));
+            benefit.Add(new SelectListItem("LTC", "3"));
+
+            ViewData["Benefit"] = benefit;
         }
     }
 }

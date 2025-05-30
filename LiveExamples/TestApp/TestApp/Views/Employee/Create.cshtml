@@ -3,10 +3,12 @@
 <h1 class="text-center mb-4">Employee Details</h1>
 
 <div class="container p-4 rounded shadow-sm" style="max-width: 600px; background: #f8f9fa;">
-    @using (Html.BeginForm("Submit", "Employee", FormMethod.Post, new { @class = "needs-validation" }))
+    @using (Html.BeginForm("Submit", "Employee", FormMethod.Post, 
+    new { @class = "needs-validation", enctype = "multipart/form-data" }))
     {
         @if (!ViewData.ModelState.IsValid)
             @Html.ValidationSummary(false, "", new { @class = "alert alert-danger" })
+
 
 
         <div class="mb-3">
@@ -30,6 +32,39 @@
                     <label class="form-check-label">@gender.Text</label>
                 </div>
             }
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(m => m.Grade, new { @class = "form-label fw-bold" })
+            @Html.DropDownListFor(m => m.Grade, new MultiSelectList(new[] { "A", "B", "C" }), "Choose Option", new { @class = "form-control" }) <!-- DropDownList -->
+            @Html.ValidationMessageFor(m => m.Grade, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">Select Benefits</label><br/>
+            @Html.ListBoxFor(m => m.SelectedBenefits, (List<SelectListItem>)ViewData["Benefit"]) <!-- ListBox -->
+            @Html.ValidationMessageFor(m => m.SelectedBenefits, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">Description</label>
+            @Html.TextAreaFor(m => m.Description, new { @class = "form-control", rows = 3, placeholder = "Enter text" }) <!-- TextAreaFor -->
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">Rank</label>
+            @Html.EditorFor(m => m.Rank) <!-- EditorFor -->
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">Upload File</label>
+            <input type="file" name="EmployeeImage" />
+        </div>
+        
+
+        <div class="mb-3">
+            @Html.HiddenFor(m => m.Id) <!-- HiddenFor -->
+            @* @Html.Hidden("CustomHidden", "HiddenValue") <!-- Hidden --> *@
         </div>
 
         <div class="text-center">
