@@ -1,0 +1,38 @@
+﻿@using Help
+@model List<Help.hey>
+
+
+@{
+    ViewData["Title"] = "Customer List";
+}
+
+<h2>Customer List</h2>
+
+<a asp-action="AddCustomer" class="btn btn-primary">Add New Customer</a>
+
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Order ID</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.Name</td>
+                <td>@customer.Age</td>
+                <td>@customer.Address</td>
+                <td>@customer.OrderId</td>
+                <td>
+                    <a asp-action="UpdateCustomer" asp-route-orderId="@customer.OrderId" class="btn btn-sm btn-warning">Update</a>
+                    <a asp-action="DeleteCustomer" asp-route-orderId="@customer.OrderId" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
