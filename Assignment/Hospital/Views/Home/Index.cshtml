@@ -1,0 +1,49 @@
+﻿@model IEnumerable<support.help>
+
+@{
+    ViewData["Title"] = "Patients List";
+}
+
+<h2>Patients List</h2>
+
+<p>
+    <a class="btn btn-primary" asp-action="AddPatient">Add New Patient</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Patient ID</th>
+            <th>Patient Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Document</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var patient in Model)
+        {
+            <tr>
+                <td>@patient.PatientId</td>
+                <td>@patient.PatientName</td>
+                <td>@patient.Age</td>
+                <td>@patient.Address</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(patient.DocumentPath))
+                    {
+                        <img src="@patient.DocumentPath" alt="Patient Image" width="100" height="100" />
+                    }
+                    else
+                    {
+                        <span>No Image</span>
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-warning btn-sm" asp-action="EditPatient" asp-route-id="@patient.PatientId">Edit</a>
+                    <a class="btn btn-danger btn-sm" asp-action="DeletePatient" asp-route-id="@patient.PatientId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

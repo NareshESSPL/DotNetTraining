@@ -1,0 +1,29 @@
+﻿@model support.help
+
+@{
+    ViewData["Title"] = "Edit Patient";
+}
+
+<h2>Edit Patient</h2>
+
+<form asp-action="EditPatient" method="post">
+    <input type="hidden" asp-for="PatientId" />
+
+    <div class="form-group">
+        <label asp-for="PatientName"></label>
+        <input asp-for="PatientName" class="form-control" />
+        <span asp-validation-for="PatientName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Age"></label>
+        <input asp-for="Age" class="form-control" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address"></label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

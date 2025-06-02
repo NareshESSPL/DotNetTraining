@@ -1,0 +1,237 @@
+﻿@using help
+@model List<hello>
+
+@{
+    ViewData["Title"] = "Student List";
+}
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Play Music</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #1a1a1a, #333);
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        #music-btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 18px;
+            background-color: #258cfb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #music-iframe {
+            margin-top: 30px;
+            width: 360px;
+            height: 200px;
+            display: none;
+            border: none;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        @@media (min-width: 768px) {
+            #music-iframe {
+                width: 560px;
+                height: 315px;
+            }
+        }
+    </style>
+    <style>
+        #chat-toggle {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 9999;
+            background-color: #0d6efd;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #chat-box {
+            position: fixed;
+            bottom: 80px;
+            left: 20px;
+            width: 300px;
+            max-height: 400px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 9999;
+        }
+
+        #chat-header {
+            background-color: #0d6efd;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        #chat-messages {
+            padding: 10px;
+            height: 250px;
+            overflow-y: auto;
+            font-size: 14px;
+        }
+
+        #chat-input {
+            display: flex;
+            border-top: 1px solid #ccc;
+        }
+
+            #chat-input input {
+                flex: 1;
+                padding: 10px;
+                border: none;
+                outline: none;
+            }
+
+            #chat-input button {
+                background-color: #0d6efd;
+                color: white;
+                border: none;
+                padding: 10px 15px;
+                cursor: pointer;
+            }
+    </style>
+
+    <!-- Chat UI -->
+    <button id="chat-toggle">Ask AI 📚</button>
+    <div id="chat-box">
+        <div id="chat-header">AI Study Helper</div>
+        <div id="chat-messages"></div>
+        <div id="chat-input">
+            <input type="text" id="user-input" placeholder="Ask any question..." />
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const toggle = document.getElementById('chat-toggle');
+        const box = document.getElementById('chat-box');
+        const input = document.getElementById('user-input');
+        const btn = document.getElementById('send-btn');
+        const messages = document.getElementById('chat-messages');
+
+        toggle.onclick = () => {
+            box.style.display = box.style.display === 'flex' ? 'none' : 'flex';
+            box.style.flexDirection = 'column';
+        };
+
+        btn.onclick = async () => {
+            const question = input.value.trim();
+            if (!question) return;
+            addMessage("You", question);
+            input.value = "";
+
+            const res = await fetch("/api/StudentAI", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ question })
+            });
+
+            const data = await res.json();
+            addMessage("AI", data.answer);
+        };
+
+        function addMessage(sender, text) {
+            const msg = document.createElement("div");
+            msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
+            messages.appendChild(msg);
+            messages.scrollTop = messages.scrollHeight;
+        }
+    </script>
+
+</head>
+<body>
+
+    <h1>Play Music</h1>
+    <p>Click the button below to play a song from YouTube</p>
+
+    <button id="music-btn">🎵 Play Song</button>
+
+    <iframe id="music-iframe"
+            title="YouTube video player"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+    </iframe>
+
+    <script>
+        const btn = document.getElementById('music-btn');
+        const iframe = document.getElementById('music-iframe');
+
+        btn.addEventListener('click', () => {
+            iframe.src = "https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1&mute=0";
+            iframe.style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
+
+
+<h2>Student List</h2>
+
+<p>
+    <a asp-action="AddStudent" class="btn btn-success">Add New Student</a>
+</p>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Roll No</th>
+                <th>Age</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.Name</td>
+                    <td>@student.RollNo</td>
+                    <td>@student.Age</td>
+                    <td>@student.Address</td>
+                    <td>
+                        <a asp-action="UpdateStudent" asp-route-rollno="@student.RollNo" class="btn btn-primary btn-sm">Edit</a>
+                        <a asp-action="DeleteStudent" asp-route-rollno="@student.RollNo" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">No students available.</div>
+}
