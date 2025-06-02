@@ -1,0 +1,143 @@
+Case Study: Employee Management System
+In an Employee Management System, we have various types of employees like PermanentEmployee and ContractEmployee. We'll demonstrate how virtual methods, abstract methods, and method overloading can be utilized in this scenario.
+
+1. Virtual Methods
+These allow a base class to define a method that can be overridden in a derived class to provide a specific implementation.
+
+  The virtual method in the base Employee class is overridden in derived classes.
+
+  This provides dynamic polymorphism, allowing behavior to vary at runtime.
+
+2. Abstract Methods
+These define a method signature in the base class that must be implemented in derived classes.
+
+   The abstract method enforces derived classes to provide their specific implementation of CalculateSalary.
+
+   This achieves strict polymorphism.
+
+3. Method Overloading
+This allows multiple methods with the same name but different parameter lists within the same class.
+
+The same method GenerateReport is overloaded to support various input parameters.
+
+This enables compile-time polymorphism or static polymorphism.
+
+
+-----------------Solution-----------------------
+using System;
+abstract class Employee{
+    protected int id;
+    protected string name;
+    public Employee(int Id,string Name){
+        id=Id;
+        name=Name;
+    }
+    public abstract double CalculateSalary();
+    public virtual void GetEmployeeDetails(){
+        Console.WriteLine($"ID:{id},Name:{name}");
+    }
+    public void GenerateReport(){
+     Console.WriteLine($"ID:{id}");   
+    }
+    public void GenerateReport(string Name){
+     Console.WriteLine($"Name:{Name}");   
+    }
+}
+    class PermanentEmployee:Employee{
+         double BasicSalary;
+         int months;
+         public PermanentEmployee(double basicSalary,int month,int id,string name):base(id,name){
+             BasicSalary=basicSalary;
+             months=month;
+         }
+         public override double CalculateSalary(){
+             return BasicSalary*months;
+         }
+        
+        public override void GetEmployeeDetails(){
+            Console.WriteLine($"Salary Info:{BasicSalary},MONTHS:{months},ID:{id},NAME:{name}");
+        }
+    }
+    public class World{
+    static void Main(string[] args){
+       Employee e=new PermanentEmployee(50000,12,12,"Run");
+       e.GetEmployeeDetails();
+    }
+    }
+
+
+Create a Vehicle class with following feature
+
+1. One readonly property for Vehicle Name, Fuel type
+
+1. One const for vehicle Production Line number as it must have a hardcoded value and cannot be changed.
+
+3 One property with only get so that it will only return Vehicle Version
+
+4.constructor (constructor1) will have a input parameter for vehicle name to be used to set Vehicle Name.
+
+5. Another constructor (constructor2) to get Vehicle Name and Fuel type to be used to set Vehicle Name and Fuel type.
+
+6.Call constructor2 from constructor1 using "this" keyword
+
+
+Create another Vehicle limited edition class derived from Vehicle class
+
+   Another constructor (constructor3) to get Vehicle Name and Fuel type to be used to set Vehicle Name and Fuel type.
+
+6.Call constructor2 from constructor3 using "base" keyword
+
+---------------------------Solution--------------------------------------------------------------
+
+using System;
+
+public class Vehicle
+{
+    
+    public readonly string Name;
+    public readonly string Fuel;
+
+   
+    public const string ProductionLine = "LINE-42";
+
+   
+    public string Version
+    {
+        get { return "1.0"; }
+    }
+
+    // Constructor 1: Only name
+    public Vehicle(string name) : this(name, "Petrol")
+    {
+       
+    }
+
+    
+    public Vehicle(string name, string fuel)
+    {
+        Name = name;
+        Fuel = fuel;
+    }
+}
+
+public class VehicleLimitedEdition : Vehicle
+{
+    // Constructor 3: Calls base constructor
+    public VehicleLimitedEdition(string name, string fuel) : base(name, fuel)
+    {
+        // Constructor chaining using 'base'
+    }
+}
+
+
+class Program
+{
+    static void Main()
+    {
+        Vehicle normal = new Vehicle("Swift");
+        Console.WriteLine($"Normal Vehicle: {normal.Name}, Fuel: {normal.Fuel}, Version: {normal.Version}, Line: {Vehicle.ProductionLine}");
+
+        VehicleLimitedEdition limited = new VehicleLimitedEdition("Thar", "Diesel");
+        Console.WriteLine($"Limited Edition: {limited.Name}, Fuel: {limited.Fuel}, Version: {limited.Version}, Line: {Vehicle.ProductionLine}");
+    }
+}
