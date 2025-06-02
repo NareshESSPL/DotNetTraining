@@ -1,0 +1,41 @@
+﻿@model List<HELP.helpp>
+
+<h2>Add Player</h2>
+
+<form asp-action="AddPlayer" method="post">
+    <div>
+        <label>Player Name:</label>
+        <input type="text" name="PlayerName" required />
+    </div>
+    <div>
+        <label>Age:</label>
+        <input type="number" name="Age" required />
+    </div>
+    <button type="submit">Add Player</button>
+</form>
+
+<hr />
+
+@if (Model != null && Model.Any())
+{
+    <h3>Player List</h3>
+    <table border="1">
+        <tr>
+            <th>Player ID</th>
+            <th>Player Name</th>
+            <th>Age</th>
+        </tr>
+        @foreach (var player in Model)
+        {
+            <tr>
+                <td>@player.PlayerId</td>
+                <td>@player.PlayerName</td>
+                <td>@player.Age</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>No players available.</p>
+}
