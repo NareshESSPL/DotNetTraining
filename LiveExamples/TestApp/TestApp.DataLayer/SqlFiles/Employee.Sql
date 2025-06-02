@@ -35,6 +35,7 @@ insert into grade values ('A')
 insert into grade values ('B')
 insert into grade values ('C')
 insert into grade values ('D')
+go;
 
 create proc sp_GetEmployeeAndGrade
 as
@@ -43,3 +44,21 @@ begin
  select * from Grade
 
 end
+
+
+ALTER TABLE EMPLOYEE ADD FileName VARCHAR(200);
+
+
+ALTER PROCEDURE AddEmployee
+    @Name VARCHAR(255),
+    @Age INT,
+    @Gender INT,
+    @FileName VARCHAR(200)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+
+    INSERT INTO Employee (Name, Age, Gender, FileName) 
+    VALUES (@Name, @Age, @Gender, @FileName);
+END

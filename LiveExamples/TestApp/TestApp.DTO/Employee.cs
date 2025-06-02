@@ -22,11 +22,9 @@ namespace TestApp.DTO
         public string Grade { get; set; }
 
         public List<int> SelectedBenefits { get; set; }
-
-        [Required(AllowEmptyStrings = false)]
+               
         public string FileName { get; set; }
 
-        [Required(AllowEmptyStrings = false)]
         public IFormFile EmployeeImage { get; set; }
     }
 }

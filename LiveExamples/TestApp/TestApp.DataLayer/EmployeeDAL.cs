@@ -38,6 +38,7 @@ namespace TestApp.DataLayer
                         employee.Name = reader.GetString("Name");
                         employee.Age = reader.GetInt32("Age");
                         employee.Gender = reader.GetInt32("Gender");
+                        employee.FileName = reader.IsDBNull("FileName") ? string.Empty : reader.GetString("FileName");
 
                         employees.Add(employee);
 
@@ -59,6 +60,7 @@ namespace TestApp.DataLayer
                     sqlCmd.Parameters.Add(new SqlParameter("@Name", employee.Name));
                     sqlCmd.Parameters.Add(new SqlParameter("@Age", employee.Age));
                     sqlCmd.Parameters.Add(new SqlParameter("@Gender", employee.Gender));
+                    sqlCmd.Parameters.Add(new SqlParameter("@FileName", employee.FileName));
 
                     sqlCon.Open();
 
