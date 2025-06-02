@@ -1,0 +1,32 @@
+﻿@model IEnumerable<TestApp1.DTO.Employee>
+
+<h1>Employee List</h1>
+<p>
+    @Html.ActionLink("Create New Employee", "Create", "Employee", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => emp.Name)</td>
+                <td>@Html.DisplayFor(m => emp.Age)</td>
+                <td>@Html.DisplayFor(m => emp.Gender)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Employee", new { id = emp.Id }, new { @class = "btn btn-warning btn-sm" })
+                    @Html.ActionLink("Details", "Details", "Employee", new { id = emp.Id }, new { @class = "btn btn-info btn-sm" })
+                    @Html.ActionLink("Delete", "Delete", "Employee", new { id = emp.Id }, new { @class = "btn btn-danger btn-sm" })
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>

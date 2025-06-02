@@ -1,0 +1,58 @@
+﻿@model TestApp1.DTO.Employee
+
+<h1>Employee Details</h1>
+<div style="width:80%;">
+
+    @using (Html.BeginForm("Submit", "Home", FormMethod.Post))
+    {
+        <div>
+            @Html.LabelFor(emp => emp.Name)
+            @Html.TextBoxFor(emp => emp.Name, new { @class = "form-control", placeholder = "Enter Name" })
+            @Html.ValidationMessageFor(emp => emp.Name, "", new { @class = "text-danger" })
+        </div>
+
+        <br />
+
+        <div>
+            @Html.LabelFor(emp => emp.Age)
+            @Html.TextBoxFor(emp => emp.Age, new { @class = "form-control", placeholder = "Enter Age" })
+            @Html.ValidationMessageFor(emp => emp.Age, "", new { @class = "text-danger" })
+        </div>
+
+        <br />
+
+        <div>
+            @Html.LabelFor(emp => emp.Email)
+            @Html.TextBoxFor(emp => emp.Email, new { @class = "form-control", placeholder = "Enter Email" })
+            @Html.ValidationMessageFor(emp => emp.Email, "", new { @class = "text-danger" })
+        </div>
+
+        <br />
+
+        <div>
+            @Html.LabelFor(emp => emp.Department)
+            @Html.TextBoxFor(emp => emp.Department, new { @class = "form-control", placeholder = "Enter Department" })
+            @Html.ValidationMessageFor(emp => emp.Department, "", new { @class = "text-danger" })
+        </div>
+
+        <br />
+        
+
+        @* @Html.RadioButtonFor(emp=> emp.Gender,"1")<span>MALE</span> *@//hardcode to add values
+
+        @* @Html.RadioButtonFor(emp => emp.Gender, "2") *@
+
+        @* <span>FEMALE</span> *@
+
+        @* @Html.RadioButtonFor(emp => emp.Gender, "1") *@
+
+        @* <span>OTHERS</span> *@
+
+
+
+        <div>
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    }
+
+

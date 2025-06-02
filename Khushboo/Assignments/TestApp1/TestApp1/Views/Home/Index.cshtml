@@ -1,0 +1,25 @@
+﻿@model IEnumerable<TestApp1.DTO.Employee>
+
+<h1>Employee List</h1>
+
+<table style="width:100%">
+	<thead>
+		<tr>
+			<th style="width:25%">Name</th>
+			<th style="width:25%">Age</th>
+			<th style="width:25%">Email</th>
+			<th style="width:25%">Department</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var emp in Model)
+		{
+			<tr>
+				<td>@Html.DisplayFor(mbox => emp.Name)</td>
+				<td>@Html.DisplayFor(mbox => emp.Age)</td>
+				<td>@Html.DisplayFor(mbox => emp.Email)</td>
+				<td>@Html.DisplayFor(mbox => emp.Department)</td>
+			</tr>
+		}
+	</tbody>
+</table>
