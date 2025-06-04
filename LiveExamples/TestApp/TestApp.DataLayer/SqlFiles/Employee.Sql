@@ -62,3 +62,22 @@ BEGIN
     INSERT INTO Employee (Name, Age, Gender, FileName) 
     VALUES (@Name, @Age, @Gender, @FileName);
 END
+
+ALTER TABLE EMPLOYEE ADD IDFileName VARCHAR(200);
+ALTER TABLE EMPLOYEE ADD IDImage VARBINARY(MAX);
+
+ALTER PROCEDURE AddEmployee
+    @Name VARCHAR(255),
+    @Age INT,
+    @Gender INT,
+    @FileName VARCHAR(200),
+    @IDFileName VARCHAR(200),
+    @IDImage VARBINARY(MAX)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+
+    INSERT INTO Employee (Name, Age, Gender, FileName, IDFileName, IDImage) 
+    VALUES (@Name, @Age, @Gender, @FileName, @IDFileName, @IDImage);
+END

@@ -39,6 +39,7 @@ namespace TestApp.DataLayer
                         employee.Age = reader.GetInt32("Age");
                         employee.Gender = reader.GetInt32("Gender");
                         employee.FileName = reader.IsDBNull("FileName") ? string.Empty : reader.GetString("FileName");
+                        employee.IDImageFileName = !reader.IsDBNull("IDFileName") ? reader.GetString("IDFileName") : default;
 
                         employees.Add(employee);
 
@@ -61,6 +62,8 @@ namespace TestApp.DataLayer
                     sqlCmd.Parameters.Add(new SqlParameter("@Age", employee.Age));
                     sqlCmd.Parameters.Add(new SqlParameter("@Gender", employee.Gender));
                     sqlCmd.Parameters.Add(new SqlParameter("@FileName", employee.FileName));
+                    sqlCmd.Parameters.Add(new SqlParameter("@IDFileName", employee.IDImageFileName));
+                    sqlCmd.Parameters.Add(new SqlParameter("@IDImage", employee.IDImageAsByteArray));
 
                     sqlCon.Open();
 
@@ -90,6 +93,8 @@ namespace TestApp.DataLayer
                         employee.Name = reader.GetString("Name");
                         employee.Age = reader.GetInt32("Age");
                         employee.Gender = reader.GetInt32("Gender");
+                        employee.IDImageFileName = !reader.IsDBNull("IDFileName") ? reader.GetString("IDFileName") : default;
+                        employee.IDImageAsByteArray = !reader.IsDBNull("IDImage") ? (byte[])reader["IDImage"] : default;
 
                     }
                 }

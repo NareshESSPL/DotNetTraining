@@ -26,5 +26,10 @@ namespace TestApp.DTO
         public string FileName { get; set; }
 
         public IFormFile EmployeeImage { get; set; }
+
+        public byte[] IDImageAsByteArray { get; set; }
+        public string IDImageFileName { get; set; }
+
+        public IFormFile IDImage { get; set; }
     }
 }

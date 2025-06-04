@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Data;
+using System.IO;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
@@ -42,13 +43,15 @@ namespace TestApp.Controllers
             ModelState.Remove(nameof(employee.Id));
             ModelState.Remove(nameof(employee.FileName));
             ModelState.Remove(nameof(employee.EmployeeImage));
+            ModelState.Remove(nameof(employee.IDImage));
+            ModelState.Remove(nameof(employee.IDImageFileName));
+            ModelState.Remove(nameof(employee.IDImageAsByteArray));
 
             if (ModelState.IsValid)
             {
                 //Buffered Model Binding – Loads the entire file into memory before processing.
-                //TODO:
-                //Check if the file is an image
-                //Save the file to DB
+                
+                //Option 1 upload to a folder in hosted server
                 if (employee.EmployeeImage != null && employee.EmployeeImage.Length > 0)
                 {
                     var filename = Guid.NewGuid().ToString();
@@ -62,9 +65,29 @@ namespace TestApp.Controllers
                         employee.EmployeeImage.CopyTo(stream);
                     }
 
-                    //TO DO
-                    //store this in the DB
                     employee.FileName = fileFullName;
+                }
+
+                //Option 2 upload to a column in DB
+                if (employee.IDImage != null && employee.IDImage.Length > 0)
+                {
+                    var filename = Guid.NewGuid().ToString();
+                    var fileExtension = Path.GetExtension(employee.IDImage.FileName);
+
+                    if (!fileExtension.Contains("png"))
+                        ModelState.AddModelError("IDImageFileName", "Please uplaod a png file");
+
+                    var fileFullName = string.Concat(filename, fileExtension);
+
+
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        employee.IDImage.CopyTo(memoryStream);
+
+                        employee.IDImageAsByteArray = memoryStream.ToArray();
+                    }
+
+                    employee.IDImageFileName = fileFullName;
                 }
 
                 _employeeDAL.AddEmployee(employee);
