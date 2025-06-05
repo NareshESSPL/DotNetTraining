@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ESSPL.Models.Help>
+
+@{
+    ViewData["Title"] = "Help List";
+}
+
+<h1>Help List</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Add New Help</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Document</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Department</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.DocumentPath))
+                    {
+                        <a href="~/uploads/@item.DocumentPath" target="_blank">View Document</a>
+                    }
+                    else
+                    {
+                        <span class="text-muted">No file</span>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Details</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

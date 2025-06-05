@@ -1,0 +1,36 @@
+﻿@model ESSPL.Models.Help
+
+@{
+    ViewData["Title"] = "Add New Help";
+}
+
+<h1>Add New Help</h1>
+
+<form asp-action="Create" method="post" enctype="multipart/form-data" class="mb-3">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Department" class="form-label"></label>
+        <input asp-for="Department" class="form-control" />
+        <span asp-validation-for="Department" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Document" class="form-label">Upload Document</label>
+        <input asp-for="Document" type="file" class="form-control" />
+        <span asp-validation-for="Document" class="text-danger"></span>
+    </div>
+
+    <button type="submit" value ="Create" class="btn btn-primary">Create</button>
+    <a asp-action="List" class="btn btn-secondary">Back to List</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
