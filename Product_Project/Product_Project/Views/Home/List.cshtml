@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Product_Project.Models.Product>
+
+@{
+    ViewData["Title"] = "List Of Products";
+}
+
+<h1>List Of Products</h1>
+
+<p>
+    <a class="btn btn-dark text-white" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orderdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Receiveddate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Orderdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Receiveddate)
+            </td>
+            <td>
+                <a class="btn btn-danger text-white" asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
+                <a class="btn btn-warning text-white"asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+                <a class="btn btn-danger "asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

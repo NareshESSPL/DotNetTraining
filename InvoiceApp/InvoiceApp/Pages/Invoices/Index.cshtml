@@ -1,0 +1,51 @@
+﻿@page
+@model InvoiceApp.Pages.Invoices.IndexModel
+@{
+    ViewData["Title"] = "Invoice List";
+}
+
+<h1>Invoices</h1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Number</th>
+            <th>Status</th>
+            <th>Issue Date</th>
+            <th>Due Date</th>
+            <th>Service</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Client Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var invoice in Model.invoiceList)
+        {
+            <tr>
+                <td>@invoice.Number</td>
+                <td>@invoice.Status</td>
+                <td>@invoice.IssueDate?.ToString("yyyy-MM-dd")</td>
+                <td>@(invoice.DueDate?.ToString("yyyy-MM-dd") ?? "N/A")</td>
+                <td>@invoice.Service</td>
+                <td>@invoice.UnitPrice</td>
+                <td>@invoice.Quantity</td>
+                <td>@(invoice.UnitPrice * invoice.Quantity)</td>
+                <td>@invoice.ClientName</td>
+                <td>@invoice.Email</td>
+                <td>@invoice.Phone</td>
+                <td>@invoice.Address</td>
+                <td>
+                    <a asp-page="/Invoices/Edit" asp-route-Number="@invoice.Number" class="btn btn-sm btn-primary">Edit</a>
+                    <a asp-page="/Invoices/Delete" asp-route-Number="@invoice.Number" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-page="./Create" class="btn btn-primary">New Invoice</a>
