@@ -1,0 +1,36 @@
+﻿@model IEnumerable<SPRT.help>
+@{
+    ViewData["Title"] = "Customer Dashboard";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Customer Management</h1>
+    <a asp-action="AddCustomer" class="btn btn-success m-2">Add Customer</a>
+</div>
+
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Shoes Size</th>
+            <th>Shoes</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.Name</td>
+                <td>@customer.Email</td>
+                <td>@customer.ShoesSize</td>
+                <td>@customer.Shoes</td>
+                <td>
+                    <a asp-action="UpdateCustomer" asp-route-id="@customer.CustomerId" class="btn btn-warning btn-sm">Update</a>
+                    <a asp-action="DeleteCustomer" asp-route-id="@customer.CustomerId" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

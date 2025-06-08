@@ -1,0 +1,37 @@
+﻿ @model SPRT.help
+@{
+    ViewData["Title"] = "Update Customer";
+}
+
+<h2>Update Customer</h2>
+
+<form asp-action="UpdateCustomer" method="post">
+    <input type="hidden" asp-for="CustomerId" />
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ShoesSize"></label>
+        <input asp-for="ShoesSize" class="form-control" />
+        <span asp-validation-for="ShoesSize" class="text-danger" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Shoes"></label>
+        <input asp-for="Shoes" class="form-control" />
+        <span asp-validation-for="Shoes" class="text-danger" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

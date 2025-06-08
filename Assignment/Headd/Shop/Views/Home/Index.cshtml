@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Sprt.help>
+@{
+    ViewData["Title"] = "Customer List";
+}
+
+<h2>Customers</h2>
+
+<a asp-action="AddCustomer" class="btn btn-success">Add New Customer</a>
+
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Document</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.Name</td>
+                <td>@customer.age</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(customer.DocumentPath))
+                    {
+                        <a href="@customer.DocumentPath" target="_blank">View</a>
+                    }
+                </td>
+                <td>
+                    <a asp-action="UpdateCustomer" asp-route-id="@customer.Id" class="btn btn-warning btn-sm">Update</a>
+                    <a asp-action="DeleteCustomer" asp-route-id="@customer.Id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

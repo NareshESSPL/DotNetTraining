@@ -1,0 +1,44 @@
+﻿@model Sprt.help
+
+@{
+    ViewData["Title"] = "Update Customer";
+}
+
+<h2>Update Customer</h2>
+
+<form asp-action="UpdateCustomer" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="age"></label>
+        <input asp-for="age" class="form-control" />
+        <span asp-validation-for="age" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Upload New Document (optional)</label>
+        <input asp-for="Document" type="file" class="form-control" />
+        <span asp-validation-for="Document" class="text-danger"></span>
+    </div>
+
+    @if (!string.IsNullOrEmpty(Model.DocumentPath))
+    {
+        <p>Current Document: <a href="@Model.DocumentPath" target="_blank">View</a></p>
+    }
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
