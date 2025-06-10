@@ -14,11 +14,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD:SurveyFeedBackSystem/DTO/obj/project.assets.json
       "projectUniqueName": "C:\\Users\\adityam\\source\\repos\\SurveyFeedBackSystem\\DTO\\DTO.csproj",
       "projectName": "DTO",
       "projectPath": "C:\\Users\\adityam\\source\\repos\\SurveyFeedBackSystem\\DTO\\DTO.csproj",
       "packagesPath": "C:\\Users\\adityam\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\adityam\\source\\repos\\SurveyFeedBackSystem\\DTO\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\adityam\\Desktop\\Test\\DotNetTraining\\LiveExamples\\OOPS\\TestApp\\TestApp.csproj",
+      "projectName": "TestApp",
+      "projectPath": "C:\\Users\\adityam\\Desktop\\Test\\DotNetTraining\\LiveExamples\\OOPS\\TestApp\\TestApp.csproj",
+      "packagesPath": "C:\\Users\\adityam\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\adityam\\Desktop\\Test\\DotNetTraining\\LiveExamples\\OOPS\\TestApp\\obj\\",
+>>>>>>> 5f01565ecb1ed147439759f0d60e3b0753074d3b:LiveExamples/OOPS/TestApp/obj/project.assets.json
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -39,7 +47,15 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+<<<<<<< HEAD:SurveyFeedBackSystem/DTO/obj/project.assets.json
           "projectReferences": {}
+=======
+          "projectReferences": {
+            "C:\\Users\\adityam\\Desktop\\Test\\DotNetTraining\\LiveExamples\\OOPS\\OOPS\\OOPS.csproj": {
+              "projectPath": "C:\\Users\\adityam\\Desktop\\Test\\DotNetTraining\\LiveExamples\\OOPS\\OOPS\\OOPS.csproj"
+            }
+          }
+>>>>>>> 5f01565ecb1ed147439759f0d60e3b0753074d3b:LiveExamples/OOPS/TestApp/obj/project.assets.json
         }
       },
       "warningProperties": {

@@ -7,8 +7,13 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
+<<<<<<< HEAD:SurveyFeedBackSystem/Repositry/obj/Debug/net8.0/Repositry.GeneratedMSBuildEditorConfig.editorconfig
 build_property.RootNamespace = Repositry
 build_property.ProjectDir = C:\Users\adityam\source\repos\SurveyFeedBackSystem\Repositry\
+=======
+build_property.RootNamespace = TestApp
+build_property.ProjectDir = C:\Users\adityam\Desktop\Test\DotNetTraining\LiveExamples\OOPS\TestApp\
+>>>>>>> 5f01565ecb1ed147439759f0d60e3b0753074d3b:LiveExamples/OOPS/TestApp/obj/Debug/net8.0/TestApp.GeneratedMSBuildEditorConfig.editorconfig
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 8.0

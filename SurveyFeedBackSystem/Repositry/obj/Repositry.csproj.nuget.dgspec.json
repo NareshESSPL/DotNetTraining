@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD:SurveyFeedBackSystem/Repositry/obj/Repositry.csproj.nuget.dgspec.json
     "C:\\Users\\adityam\\source\\repos\\SurveyFeedBackSystem\\Repositry\\Repositry.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\adityam\\source\\repos\\SurveyFeedBackSystem\\DTO\\DTO.csproj",
         "packagesPath": "C:\\Users\\adityam\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\adityam\\source\\repos\\SurveyFeedBackSystem\\DTO\\obj\\",
+=======
+    "C:\\Users\\adityam\\Desktop\\Test\\DotNetTraining\\LiveExamples\\OOPS\\TestApp\\TestApp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\adityam\\Desktop\\Test\\DotNetTraining\\LiveExamples\\OOPS\\OOPS\\OOPS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\adityam\\Desktop\\Test\\DotNetTraining\\LiveExamples\\OOPS\\OOPS\\OOPS.csproj",
+        "projectName": "OOPS",
+        "projectPath": "C:\\Users\\adityam\\Desktop\\Test\\DotNetTraining\\LiveExamples\\OOPS\\OOPS\\OOPS.csproj",
+        "packagesPath": "C:\\Users\\adityam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\adityam\\Desktop\\Test\\DotNetTraining\\LiveExamples\\OOPS\\OOPS\\obj\\",
+>>>>>>> 5f01565ecb1ed147439759f0d60e3b0753074d3b:LiveExamples/OOPS/TestApp/obj/TestApp.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -70,6 +84,7 @@
         }
       }
     },
+<<<<<<< HEAD:SurveyFeedBackSystem/Repositry/obj/Repositry.csproj.nuget.dgspec.json
     "C:\\Users\\adityam\\source\\repos\\SurveyFeedBackSystem\\Repositry\\Repositry.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -78,6 +93,16 @@
         "projectPath": "C:\\Users\\adityam\\source\\repos\\SurveyFeedBackSystem\\Repositry\\Repositry.csproj",
         "packagesPath": "C:\\Users\\adityam\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\adityam\\source\\repos\\SurveyFeedBackSystem\\Repositry\\obj\\",
+=======
+    "C:\\Users\\adityam\\Desktop\\Test\\DotNetTraining\\LiveExamples\\OOPS\\TestApp\\TestApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\adityam\\Desktop\\Test\\DotNetTraining\\LiveExamples\\OOPS\\TestApp\\TestApp.csproj",
+        "projectName": "TestApp",
+        "projectPath": "C:\\Users\\adityam\\Desktop\\Test\\DotNetTraining\\LiveExamples\\OOPS\\TestApp\\TestApp.csproj",
+        "packagesPath": "C:\\Users\\adityam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\adityam\\Desktop\\Test\\DotNetTraining\\LiveExamples\\OOPS\\TestApp\\obj\\",
+>>>>>>> 5f01565ecb1ed147439759f0d60e3b0753074d3b:LiveExamples/OOPS/TestApp/obj/TestApp.csproj.nuget.dgspec.json
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -99,8 +124,13 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+<<<<<<< HEAD:SurveyFeedBackSystem/Repositry/obj/Repositry.csproj.nuget.dgspec.json
               "C:\\Users\\adityam\\source\\repos\\SurveyFeedBackSystem\\DTO\\DTO.csproj": {
                 "projectPath": "C:\\Users\\adityam\\source\\repos\\SurveyFeedBackSystem\\DTO\\DTO.csproj"
+=======
+              "C:\\Users\\adityam\\Desktop\\Test\\DotNetTraining\\LiveExamples\\OOPS\\OOPS\\OOPS.csproj": {
+                "projectPath": "C:\\Users\\adityam\\Desktop\\Test\\DotNetTraining\\LiveExamples\\OOPS\\OOPS\\OOPS.csproj"
+>>>>>>> 5f01565ecb1ed147439759f0d60e3b0753074d3b:LiveExamples/OOPS/TestApp/obj/TestApp.csproj.nuget.dgspec.json
               }
             }
           }
