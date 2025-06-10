@@ -1,0 +1,15 @@
+C:\Users\adityam\source\repos\SurveyFeedBackSystem\Repositry\bin\Debug\net8.0\Repositry.deps.json
+C:\Users\adityam\source\repos\SurveyFeedBackSystem\Repositry\bin\Debug\net8.0\Repositry.dll
+C:\Users\adityam\source\repos\SurveyFeedBackSystem\Repositry\bin\Debug\net8.0\Repositry.pdb
+C:\Users\adityam\source\repos\SurveyFeedBackSystem\Repositry\bin\Debug\net8.0\DTO.dll
+C:\Users\adityam\source\repos\SurveyFeedBackSystem\Repositry\bin\Debug\net8.0\DTO.pdb
+C:\Users\adityam\source\repos\SurveyFeedBackSystem\Repositry\obj\Debug\net8.0\Repositry.csproj.AssemblyReference.cache
+C:\Users\adityam\source\repos\SurveyFeedBackSystem\Repositry\obj\Debug\net8.0\Repositry.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adityam\source\repos\SurveyFeedBackSystem\Repositry\obj\Debug\net8.0\Repositry.AssemblyInfoInputs.cache
+C:\Users\adityam\source\repos\SurveyFeedBackSystem\Repositry\obj\Debug\net8.0\Repositry.AssemblyInfo.cs
+C:\Users\adityam\source\repos\SurveyFeedBackSystem\Repositry\obj\Debug\net8.0\Repositry.csproj.CoreCompileInputs.cache
+C:\Users\adityam\source\repos\SurveyFeedBackSystem\Repositry\obj\Debug\net8.0\Repositry.csproj.Up2Date
+C:\Users\adityam\source\repos\SurveyFeedBackSystem\Repositry\obj\Debug\net8.0\Repositry.dll
+C:\Users\adityam\source\repos\SurveyFeedBackSystem\Repositry\obj\Debug\net8.0\refint\Repositry.dll
+C:\Users\adityam\source\repos\SurveyFeedBackSystem\Repositry\obj\Debug\net8.0\Repositry.pdb
+C:\Users\adityam\source\repos\SurveyFeedBackSystem\Repositry\obj\Debug\net8.0\ref\Repositry.dll
