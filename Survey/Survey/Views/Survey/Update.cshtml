@@ -1,0 +1,53 @@
+﻿@model DTO.Survey
+<form method="post">
+    <h1>UPDATING SURVEY DETAILS</h1>
+    <table>
+
+        <tr>
+            <td>
+                <span>MODIFIEDDate</span>
+            </td>
+            <td>
+                <input type="text" asp-for="ModifiedDate" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>SYURVEYTYPEID</span>
+            </td>
+            <td>
+                <input type="text" asp-for="SurveyTypeID" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>SURVEYTYPENAME</span>
+            </td>
+            <td>
+                <input type="text" asp-for="SurveyTypeName" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>ModifiedBy</span>
+            </td>
+            <td>
+                <input type="text" asp-for="ModifiedBy" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>MODIFIEDDate</span>
+            </td>
+            <td>
+                <input type="text" asp-for="ModifiedDate" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit" asp-controller="Survey" asp-action="Update">Update</button>
+                <a asp-controller="Survey" asp-action="Update" class="fw-bolder">Back to List</a>
+            </td>
+        </tr>
+    </table>
+</form>

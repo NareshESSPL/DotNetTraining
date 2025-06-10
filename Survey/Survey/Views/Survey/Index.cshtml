@@ -1,0 +1,55 @@
+﻿<h1>THis is the index page for the survey</h1>
+
+<p>here we have to display about the surveys</p>
+
+@model List<DTO.Survey>
+
+<h1> index page</h1>
+<p>SURVEY LIST</p>
+<div>
+    <a asp-controller="St" asp-action="Create" class="btn btn-primary">Create New Survey</a>
+</div>
+<table class="table table-border table-striped">
+    <thead>
+        <tr>
+            <th>SURVEYID</th>
+            <th>SURVEYTYPEID</th>
+            <th>SURVEYTYPENAME </th>
+            <th> MODIFIEDBY</th>
+            <th>MODIFIEDDATE </th>
+            
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>@obj.SurveyID</td>
+                <td>@obj.SurveyTypeID</td>
+                <td>@obj.SurveyTypeName</td>
+                <td>@obj.ModifiedBy</td>
+                <td>@obj.ModifiedDate</td>
+
+
+                <td>
+                    <div>
+                        <a asp-controller="survey" asp-action="Edit" class="btn btn-primary" asp-route-id="@obj.SurveyID">Edit</a>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <a asp-controller="survey" asp-action="Delete" class="btn btn-danger" asp-route-id="@obj.SurveyID">Delete</a>
+
+                    </div>
+                </td>
+
+            </tr>
+
+
+        }
+
+    </tbody>
+
+</table>
