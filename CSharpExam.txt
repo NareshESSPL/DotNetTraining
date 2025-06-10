@@ -1,0 +1,180 @@
+using System.Security.Cryptography.X509Certificates;
+using DTO;
+
+namespace DTO
+{
+    public interface ISurvey
+    {
+        void AddSurvey(SurveyBase survey);
+        void UpdateSurvey(SurveyBase survey);
+        void DeleteSurvey(int surveyId);
+    }
+    public abstract class SurveyBase
+    {
+        public int SurveyID { get; set; }
+        public int SurveyTypeID { get; set; }
+        public string SurveyTypeName { get; set; }
+        public string ModifiedBy { get; set; }
+        public string ModifiedDate { get; set; }
+
+        public void DisplayDetails()
+        {
+            Console.WriteLine($"SurveyID: {SurveyID}");
+            Console.WriteLine($"SurveyTypeID: {SurveyTypeID}");
+            Console.WriteLine($"SurveyTypeName: {SurveyTypeName}");
+            Console.WriteLine($"ModifiedBy: {ModifiedBy}");
+            Console.WriteLine($"ModifiedDate: {ModifiedDate}");
+            
+        }
+
+        
+    }
+    public delegate void LogHandler(string message);
+
+    
+    public class SurveyManager : SurveyBase, ISurvey
+    {
+        private List<SurveyBase> surveys = new List<SurveyBase>();
+
+        
+        public event LogHandler OnLog;
+
+        public void AddSurvey(SurveyBase survey)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(survey.SurveyTypeName))
+                    throw new ArgumentException("SurveyTypeName cannot be empty.");
+                survey.SurveyID = surveys.Count + 1;
+                surveys.Add(survey);
+
+                OnLog?.Invoke("Survey Added");
+            }
+            catch (Exception ex)
+            {
+                OnLog?.Invoke($"Error Adding Survey: {ex.Message}");
+                throw; 
+            }
+        }
+
+        public void UpdateSurvey(SurveyBase survey)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(survey.SurveyTypeName))
+                    throw new ArgumentException("SurveyTypeName cannot be empty.");
+
+                var existing = surveys.Find(s => s.SurveyID == survey.SurveyID);
+                if (existing == null)
+                    throw new KeyNotFoundException($"Survey with ID {survey.SurveyID} not found.");
+
+                existing.SurveyTypeID = survey.SurveyTypeID;
+                existing.SurveyTypeName = survey.SurveyTypeName;
+                existing.ModifiedBy = survey.ModifiedBy;
+                existing.ModifiedDate = survey.ModifiedDate;
+
+                OnLog?.Invoke($"Updated survey with ID: {survey.SurveyID}");
+            }
+            catch (Exception ex)
+            {
+                OnLog?.Invoke($"Error Updating Survey: {ex.Message}");
+                throw;
+            }
+        }
+
+        public void DeleteSurvey(int surveyId)
+        {
+            try
+            {
+                var existing = surveys.Find(s => s.SurveyID == surveyId);
+                if (existing == null)
+                    throw new KeyNotFoundException($"Survey with ID {surveyId} not found.");
+
+                surveys.Remove(existing);
+                OnLog?.Invoke($"Deleted survey");
+            }
+            catch (Exception ex)
+            {
+                OnLog?.Invoke($"Error Delete Survey: {ex.Message}");
+                throw;
+            }
+        }
+        public void GetAllSurvey()
+        {
+            foreach (var item in surveys)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+class Program
+{
+    static void Main()
+    {
+        SurveyManager manager = new SurveyManager();
+        manager.OnLog += Console.WriteLine;
+
+        
+        var survey1 = new SurveyManager
+        {
+            SurveyTypeID = 101,
+            SurveyTypeName = "Customer Satisfaction",
+            ModifiedBy = "Admin",
+            ModifiedDate = DateTime.Now.ToString("yyyy-MM-dd")
+        };
+
+        var survey2 = new SurveyManager
+        {
+            SurveyTypeID = 102,
+            SurveyTypeName = "Product Feedback",
+            ModifiedBy = "Admin",
+            ModifiedDate = DateTime.Now.ToString("yyyy-MM-dd")
+        };
+
+
+        manager.AddSurvey(survey1);
+        manager.AddSurvey(survey2);
+
+        
+        Console.WriteLine("\nAll Surveys:");
+        manager.DisplayDetails();
+
+
+
+        survey1.SurveyTypeName = "Updated Survey";
+        survey1.ModifiedBy = "Editor";
+        survey1.ModifiedDate = DateTime.Now.ToString("yyyy-MM-dd");
+
+        manager.UpdateSurvey(survey1);
+
+
+        Console.WriteLine("\nAfter Update:");
+        manager.DisplayDetails();
+
+
+        manager.DeleteSurvey(survey2.SurveyID);
+
+        Console.WriteLine("\nAfter Deletion:");
+        manager.DisplayDetails();
+
+
+        try
+        {
+            var invalidSurvey = new SurveyManager
+            {
+                SurveyTypeID = 103,
+                SurveyTypeName = "",
+                ModifiedBy = "Tester",
+                ModifiedDate = DateTime.Now.ToString("yyyy-MM-dd")
+            };
+            manager.AddSurvey(invalidSurvey);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Caught Exception: {ex.Message}");
+        }
+    }
+}
+
+
