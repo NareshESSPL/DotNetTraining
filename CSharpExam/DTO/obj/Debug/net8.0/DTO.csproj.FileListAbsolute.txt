@@ -1,0 +1,14 @@
+C:\Users\mrutyunjaya\Desktop\DotNetProject\CSharpExam\DTO\obj\Debug\net8.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mrutyunjaya\Desktop\DotNetProject\CSharpExam\DTO\obj\Debug\net8.0\DTO.AssemblyInfoInputs.cache
+C:\Users\mrutyunjaya\Desktop\DotNetProject\CSharpExam\DTO\obj\Debug\net8.0\DTO.AssemblyInfo.cs
+C:\Users\mrutyunjaya\Desktop\DotNetProject\CSharpExam\DTO\obj\Debug\net8.0\DTO.csproj.CoreCompileInputs.cache
+C:\Users\mrutyunjaya\Desktop\DotNetProject\CSharpExam\DTO\bin\Debug\net8.0\DTO.exe
+C:\Users\mrutyunjaya\Desktop\DotNetProject\CSharpExam\DTO\bin\Debug\net8.0\DTO.deps.json
+C:\Users\mrutyunjaya\Desktop\DotNetProject\CSharpExam\DTO\bin\Debug\net8.0\DTO.runtimeconfig.json
+C:\Users\mrutyunjaya\Desktop\DotNetProject\CSharpExam\DTO\bin\Debug\net8.0\DTO.dll
+C:\Users\mrutyunjaya\Desktop\DotNetProject\CSharpExam\DTO\bin\Debug\net8.0\DTO.pdb
+C:\Users\mrutyunjaya\Desktop\DotNetProject\CSharpExam\DTO\obj\Debug\net8.0\DTO.dll
+C:\Users\mrutyunjaya\Desktop\DotNetProject\CSharpExam\DTO\obj\Debug\net8.0\refint\DTO.dll
+C:\Users\mrutyunjaya\Desktop\DotNetProject\CSharpExam\DTO\obj\Debug\net8.0\DTO.pdb
+C:\Users\mrutyunjaya\Desktop\DotNetProject\CSharpExam\DTO\obj\Debug\net8.0\DTO.genruntimeconfig.cache
+C:\Users\mrutyunjaya\Desktop\DotNetProject\CSharpExam\DTO\obj\Debug\net8.0\ref\DTO.dll

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpExam", "CSharpExam\CSharpExam.csproj", "{E7ED0D40-A52A-4767-A951-2C86D4CB56B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{B7DA38BA-51C9-486E-B3F0-6A17F7F398D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7ED0D40-A52A-4767-A951-2C86D4CB56B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7ED0D40-A52A-4767-A951-2C86D4CB56B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7ED0D40-A52A-4767-A951-2C86D4CB56B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7ED0D40-A52A-4767-A951-2C86D4CB56B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7DA38BA-51C9-486E-B3F0-6A17F7F398D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7DA38BA-51C9-486E-B3F0-6A17F7F398D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7DA38BA-51C9-486E-B3F0-6A17F7F398D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7DA38BA-51C9-486E-B3F0-6A17F7F398D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {856B2DAF-2B8A-406F-B54C-04D734AE87EB}
+	EndGlobalSection
+EndGlobal
