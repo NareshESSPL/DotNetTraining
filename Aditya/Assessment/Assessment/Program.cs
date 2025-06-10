@@ -1,4 +1,4 @@
-namespace Student
+namespace Assessment
 {
     public class Program
     {
@@ -28,7 +28,7 @@ namespace Student
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Student}/{action=Index}/{id?}");
+                pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
         }

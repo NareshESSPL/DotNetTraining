@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assessment", "Assessment\Assessment.csproj", "{84C5AC4A-7FC5-470C-B593-D27D38A3785A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{5193763C-531B-431B-919B-15C44E14E367}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{239FEF13-8333-4BFE-BDD7-5AD4C1399FFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84C5AC4A-7FC5-470C-B593-D27D38A3785A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84C5AC4A-7FC5-470C-B593-D27D38A3785A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84C5AC4A-7FC5-470C-B593-D27D38A3785A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84C5AC4A-7FC5-470C-B593-D27D38A3785A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5193763C-531B-431B-919B-15C44E14E367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5193763C-531B-431B-919B-15C44E14E367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5193763C-531B-431B-919B-15C44E14E367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5193763C-531B-431B-919B-15C44E14E367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{239FEF13-8333-4BFE-BDD7-5AD4C1399FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{239FEF13-8333-4BFE-BDD7-5AD4C1399FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{239FEF13-8333-4BFE-BDD7-5AD4C1399FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{239FEF13-8333-4BFE-BDD7-5AD4C1399FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BECA1326-C9F7-4183-A158-13A3D2526AEB}
+	EndGlobalSection
+EndGlobal

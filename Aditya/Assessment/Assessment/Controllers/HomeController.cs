@@ -1,8 +1,8 @@
 using System.Diagnostics;
+using Assessment.Models;
 using Microsoft.AspNetCore.Mvc;
-using Student.Models;
 
-namespace Student.Controllers
+namespace Assessment.Controllers
 {
     public class HomeController : Controller
     {
@@ -17,11 +17,6 @@ namespace Student.Controllers
         {
             return View();
         }
-        public IActionResult Contact()
-        {
-            return View();
-        }
-
 
         public IActionResult Privacy()
         {

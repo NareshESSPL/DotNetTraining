@@ -1,0 +1,670 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model IEnumerable<Assessment.Models.DTO.Survey>
+
+@{
+    ViewBag.Title = "Surveys";
+}
+
+<style>
+    .table {
+        margin-top: 20px;
+        border-collapse: collapse;
+        width: 100%;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        overflow: hidden; /* Ensures rounded corners apply to content */
+    }
+    .table thead {
+        background-color: #007bff; /* Primary blue for header */
+        color: white;
+    }
+    .table th, .table td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #dee2e6;
+    }
+    .table tbody tr:nth-of-type(even) {
+        background-color: #f8f9fa; /* Light grey for even rows */
+    }
+    .table tbody tr:hover {
+        background-color: #e2f0ff; /* Lighter blue on hover */
+    }
+    .btn {
+        display: inline-block;
+        padding: 8px 15px;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        cursor: pointer;
+        border: 1px solid transparent;
+        margin-right: 5px; /* Space between buttons */
+    }
+    .btn-primary {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004085;
+    }
+    .btn-info {
+        color: #fff;
+        background-color: #17a2b8;
+        border-color: #17a2b8;
+    }
+    .btn-info:hover {
+        background-color: #117a8b;
+        border-color: #0f6674;
+    }
+    .btn-warning {
+        color: #212529; /* Darker text for warning */
+        background-color: #ffc107;
+        border-color: #ffc107;
+    }
+    .btn-warning:hover {
+        background-color: #e0a800;
+        border-color: #cc9500;
+    }
+    .btn-danger {
+        color: #fff;
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+    .btn-danger:hover {
+        background-color: #c82333;
+        border-color: #bd2130;
+    }
+    .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+    .alert-success {
+        color: #155724;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+    }
+    .alert-danger {
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+    }
+    .container {
+        max-width: 960px; /* Optional: constrain width for better readability */
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+        color: #333;
+        margin-bottom: 25px;
+        text-align: center;
+        font-weight: 700;
+    }
+</style>
+
+<div class="container">
+    <h2>Survey List</h2>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    <p>
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.SurveyName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SurveyTypeID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ModifiedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ModifiedDate)
+                </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SurveyName)
+                    </td>
+                    <td>
+                        @* You might need a join or separate lookup to display SurveyTypeName here *@
+                        @Html.DisplayFor(modelItem => item.SurveyTypeID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModifiedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModifiedDate)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.SurveyID }, new { @class = "btn btn-warning btn-sm" })
+                        @Html.ActionLink("Details", "Details", new { id = item.SurveyID }, new { @class = "btn btn-info btn-sm" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.SurveyID }, new { @class = "btn btn-danger btn-sm" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+```csharp
+@* Path: YourProjectName.Web/Views/Survey/Create.cshtml *@
+@model YourProjectName.Web.Models.SurveyViewModel
+
+@{
+    ViewBag.Title = "Create Survey";
+}
+
+<style>
+    .form-container {
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-group label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 8px;
+        color: #555;
+    }
+    .form-control {
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        box-sizing: border-box; /* Include padding in element's total width and height */
+        font-size: 1rem;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .form-control:focus {
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+    .text-danger {
+        color: #dc3545;
+        font-size: 0.875em;
+        margin-top: 5px;
+        display: block;
+    }
+    .btn-create {
+        background-color: #28a745; /* Success green */
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100%; /* Full width button */
+        margin-top: 20px;
+    }
+    .btn-create:hover {
+        background-color: #218838;
+    }
+    .btn-back {
+        display: block; /* Make it a block element to center */
+        width: fit-content; /* Fit content for better appearance with block */
+        margin: 20px auto 0 auto; /* Center it below the form */
+        padding: 10px 20px;
+        background-color: #6c757d; /* Grey for back button */
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+    .btn-back:hover {
+        background-color: #5a6268;
+    }
+</style>
+
+<div class="form-container">
+    <h2>Create New Survey</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SurveyTypeID, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.SurveyTypeID, Model.SurveyTypes, "--- Select Survey Type ---", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SurveyTypeID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SurveyName, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SurveyName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SurveyName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            @* Hidden fields for ModifiedBy and ModifiedDate - could be set by server *@
+            @Html.HiddenFor(model => model.ModifiedBy)
+            @Html.HiddenFor(model => model.ModifiedDate)
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-create" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn-back" })
+    </div>
+</div>
+```csharp
+@* Path: YourProjectName.Web/Views/Survey/Edit.cshtml *@
+@model YourProjectName.Web.Models.SurveyViewModel
+
+@{
+    ViewBag.Title = "Edit Survey";
+}
+
+<style>
+    .form-container {
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-group label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 8px;
+        color: #555;
+    }
+    .form-control {
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        box-sizing: border-box;
+        font-size: 1rem;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .form-control:focus {
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+    .text-danger {
+        color: #dc3545;
+        font-size: 0.875em;
+        margin-top: 5px;
+        display: block;
+    }
+    .btn-save {
+        background-color: #007bff; /* Primary blue */
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .btn-save:hover {
+        background-color: #0056b3;
+    }
+    .btn-back {
+        display: block;
+        width: fit-content;
+        margin: 20px auto 0 auto;
+        padding: 10px 20px;
+        background-color: #6c757d;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+    .btn-back:hover {
+        background-color: #5a6268;
+    }
+</style>
+
+<div class="form-container">
+    <h2>Edit Survey</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.SurveyID) @* Hidden field for the ID to be passed back to controller *@
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SurveyTypeID, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.SurveyTypeID, Model.SurveyTypes, "--- Select Survey Type ---", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SurveyTypeID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SurveyName, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SurveyName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SurveyName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            @* Hidden fields for ModifiedBy and ModifiedDate - could be set by server *@
+            @Html.HiddenFor(model => model.ModifiedBy)
+            @Html.HiddenFor(model => model.ModifiedDate)
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-save" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn-back" })
+    </div>
+</div>
+```csharp
+@* Path: YourProjectName.Web/Views/Survey/Details.cshtml *@
+@model YourProjectName.DTO.Survey
+
+@{
+    ViewBag.Title = "Survey Details";
+}
+
+<style>
+    .details-container {
+        max-width: 500px;
+        margin: 30px auto;
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
+    .dl-horizontal dt {
+        float: left;
+        clear: left;
+        width: 120px; /* Adjust as needed */
+        text-align: right;
+        margin-right: 15px;
+        font-weight: bold;
+        color: #555;
+        line-height: 2;
+    }
+    .dl-horizontal dd {
+        margin-left: 145px; /* dt width + margin-right */
+        line-height: 2;
+    }
+    .action-links {
+        margin-top: 30px;
+        text-align: center;
+    }
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+        border: none;
+        margin: 0 5px;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+    .btn-back {
+        background-color: #6c757d;
+        color: white;
+    }
+    .btn-back:hover {
+        background-color: #5a6268;
+    }
+</style>
+
+<div class="details-container">
+    <h2>Survey Details</h2>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.SurveyName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SurveyName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SurveyTypeID)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SurveyTypeID)
+                @* You'd typically join to get the SurveyTypeName here, or pass it from controller *@
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedBy)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ModifiedBy)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ModifiedDate)
+            </dd>
+        </dl>
+    </div>
+    <div class="action-links">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.SurveyID }, new { @class = "btn btn-primary" }) |
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-back" })
+    </div>
+</div>
+```csharp
+@* Path: YourProjectName.Web/Views/Survey/Delete.cshtml *@
+@model YourProjectName.DTO.Survey
+
+@{
+    ViewBag.Title = "Delete Survey";
+}
+
+<style>
+    .delete-container {
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    h2 {
+        color: #dc3545; /* Red for delete confirmation */
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+    h3 {
+        color: #555;
+        margin-bottom: 25px;
+    }
+    .dl-horizontal dt {
+        float: left;
+        clear: left;
+        width: 120px;
+        text-align: right;
+        margin-right: 15px;
+        font-weight: bold;
+        color: #555;
+        line-height: 2;
+    }
+    .dl-horizontal dd {
+        margin-left: 145px;
+        line-height: 2;
+    }
+    .action-buttons {
+        margin-top: 30px;
+    }
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+        border: none;
+        margin: 0 8px;
+    }
+    .btn-danger {
+        background-color: #dc3545;
+        color: white;
+    }
+    .btn-danger:hover {
+        background-color: #c82333;
+    }
+    .btn-back {
+        background-color: #6c757d;
+        color: white;
+    }
+    .btn-back:hover {
+        background-color: #5a6268;
+    }
+</style>
+
+<div class="delete-container">
+    <h2>Delete Survey</h2>
+
+    <h3>Are you sure you want to delete this survey?</h3>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.SurveyName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SurveyName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SurveyTypeID)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SurveyTypeID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedBy)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ModifiedBy)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ModifiedDate)
+            </dd>
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="action-buttons">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-back" })
+            </div>
+        }
+    </div>
+</div>
+
+
