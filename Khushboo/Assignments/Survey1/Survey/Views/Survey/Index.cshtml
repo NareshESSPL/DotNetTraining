@@ -1,0 +1,61 @@
+﻿@model IEnumerable<SurveyNew.Models.Surveyy>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SurveyID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SurveyTypeID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SurveyTypeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SurveyID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SurveyTypeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SurveyTypeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedDate)
+            </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.SurveyID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.SurveyID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.SurveyID })
+
+                </td>
+
+        </tr>
+}
+    </tbody>
+</table>
