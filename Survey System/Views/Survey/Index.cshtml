@@ -1,0 +1,38 @@
+﻿@model List<Survey_System.DTO.SurveyDTO>
+
+<h2>Surveys</h2>
+<a asp-action="Create" class="btn btn-primary">Add New Survey</a>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type ID</th>
+            <th>Modified By</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.SurveyID</td>
+                <td>@item.SurveyTypeName</td>
+                <td>@item.SurveyTypeID</td>
+                <td>@item.ModifiedBy</td>
+                <td>@item.ModifiedDate</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.SurveyID">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.SurveyID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
