@@ -1,0 +1,27 @@
+﻿@using SurveyManager1.Models;
+
+@page
+@model SurveyManager1.Views.Home.IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Survey Manager Application</p>
+</div>
+
+@if (Model.Surveys != null && Model.Surveys.Any())
+{
+    <h2>Surveys</h2>
+    <ul>
+        @foreach (var survey in Model.Surveys)
+        {
+            <li>@survey.Name</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No surveys found.</p>
+}

@@ -1,0 +1,8 @@
+C:\Users\santanuk\source\repos\SurveyManager1\SurveyManager1\obj\Debug\net8.0\SurveyManager1.csproj.AssemblyReference.cache
+C:\Users\santanuk\source\repos\SurveyManager1\SurveyManager1\obj\Debug\net8.0\SurveyManager1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\santanuk\source\repos\SurveyManager1\SurveyManager1\obj\Debug\net8.0\SurveyManager1.AssemblyInfoInputs.cache
+C:\Users\santanuk\source\repos\SurveyManager1\SurveyManager1\obj\Debug\net8.0\SurveyManager1.AssemblyInfo.cs
+C:\Users\santanuk\source\repos\SurveyManager1\SurveyManager1\obj\Debug\net8.0\SurveyManager1.csproj.CoreCompileInputs.cache
+C:\Users\santanuk\source\repos\SurveyManager1\SurveyManager1\obj\Debug\net8.0\SurveyManager1.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\santanuk\source\repos\SurveyManager1\SurveyManager1\obj\Debug\net8.0\SurveyManager1.RazorAssemblyInfo.cache
+C:\Users\santanuk\source\repos\SurveyManager1\SurveyManager1\obj\Debug\net8.0\SurveyManager1.RazorAssemblyInfo.cs
