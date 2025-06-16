@@ -1,0 +1,50 @@
+Guide to use MultiListItem:
+
+✅ 1️⃣ Define the Class Model
+
+public class StudentViewModel
+{
+    public int StudentId { get; set; }
+    public string StudentName { get; set; }
+    public List<string> SelectedCourses { get; set; } // Stores multiple selections
+}
+
+✅ 2️⃣ Populate MultiSelect Dropdown in Controller
+
+public IActionResult Create()
+{
+    List<SelectListItem> courses = new()
+    {
+        new SelectListItem { Value = "1", Text = "Mathematics" },
+        new SelectListItem { Value = "2", Text = "Physics" },
+        new SelectListItem { Value = "3", Text = "Chemistry" },
+        new SelectListItem { Value = "4", Text = "Biology" }
+    };
+
+    ViewBag.CourseList = new MultiSelectList(courses, "Value", "Text");
+    return View(new StudentViewModel());
+}
+
+✅ 3️⃣ Display Multi-Select Dropdown in View
+
+@model StudentViewModel
+
+<form asp-action="SaveStudent" method="post">
+    <label>Select Courses:</label>
+    @Html.ListBoxFor(m => m.SelectedCourses, ViewBag.CourseList, new { @class = "form-control", multiple = "multiple" })
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+✅ 4️⃣ Handle Multi-Selection in Controller
+
+[HttpPost]
+public IActionResult SaveStudent(StudentViewModel student)
+{
+    var selectedCourses = student.SelectedCourses; // Get selected values
+    Console.WriteLine("Selected Courses: " + string.Join(", ", selectedCourses));
+
+    return RedirectToAction("Index");
+}
+
+

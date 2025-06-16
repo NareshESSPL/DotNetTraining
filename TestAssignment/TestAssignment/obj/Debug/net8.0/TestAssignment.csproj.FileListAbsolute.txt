@@ -1,0 +1,14 @@
+C:\Users\soumya10\Desktop\TestAssignment\TestAssignment\bin\Debug\net8.0\TestAssignment.exe
+C:\Users\soumya10\Desktop\TestAssignment\TestAssignment\bin\Debug\net8.0\TestAssignment.deps.json
+C:\Users\soumya10\Desktop\TestAssignment\TestAssignment\bin\Debug\net8.0\TestAssignment.runtimeconfig.json
+C:\Users\soumya10\Desktop\TestAssignment\TestAssignment\bin\Debug\net8.0\TestAssignment.dll
+C:\Users\soumya10\Desktop\TestAssignment\TestAssignment\bin\Debug\net8.0\TestAssignment.pdb
+C:\Users\soumya10\Desktop\TestAssignment\TestAssignment\obj\Debug\net8.0\TestAssignment.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\soumya10\Desktop\TestAssignment\TestAssignment\obj\Debug\net8.0\TestAssignment.AssemblyInfoInputs.cache
+C:\Users\soumya10\Desktop\TestAssignment\TestAssignment\obj\Debug\net8.0\TestAssignment.AssemblyInfo.cs
+C:\Users\soumya10\Desktop\TestAssignment\TestAssignment\obj\Debug\net8.0\TestAssignment.csproj.CoreCompileInputs.cache
+C:\Users\soumya10\Desktop\TestAssignment\TestAssignment\obj\Debug\net8.0\TestAssignment.dll
+C:\Users\soumya10\Desktop\TestAssignment\TestAssignment\obj\Debug\net8.0\refint\TestAssignment.dll
+C:\Users\soumya10\Desktop\TestAssignment\TestAssignment\obj\Debug\net8.0\TestAssignment.pdb
+C:\Users\soumya10\Desktop\TestAssignment\TestAssignment\obj\Debug\net8.0\TestAssignment.genruntimeconfig.cache
+C:\Users\soumya10\Desktop\TestAssignment\TestAssignment\obj\Debug\net8.0\ref\TestAssignment.dll

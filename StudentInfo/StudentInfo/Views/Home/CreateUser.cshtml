@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "CreateUser";
+}
+@model DTO.Models.UserProfile
+<h1>CreateUser</h1>
+
+@Html.ActionLink("Log Out", "Index", "Home", null, new { @class = "btn btn-success mb-3" })
+
+<div style="width: fit-content">
+    @using (Html.BeginForm("CreateUser", "Home", FormMethod.Post))
+    {
+        <div>
+            <div>
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "Enter Name" })
+                @Html.ValidationMessageFor(m => m.UserName, "Enter valid username", new { @class = "text-danger" })
+            </div>
+
+            <div>
+                @Html.LabelFor(m => m.UserPassword)
+                @Html.TextBoxFor(m => m.UserPassword, new { @class = "form-control", placeholder = "Enter Password" })
+                @Html.ValidationMessageFor(m => m.UserPassword, "Enter valid password", new { @class = "text-danger" })
+            </div>
+
+           
+            
+
+            <button type="submit" class="btn btn-secondary">Create User</button>
+        </div>
+    }
+</div>

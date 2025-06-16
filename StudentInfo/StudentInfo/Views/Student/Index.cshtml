@@ -6,36 +6,106 @@
 
 <h1>Student List</h1>
 
+@Html.ActionLink("Log Out", "Logout", "Home", null, new { @class = "btn btn-success mb-3" })
+
+<!-- Search Form -->
+<form asp-controller="Student" asp-action="Index" method="get">
+    <div class="col-6">
+        <input type="text" class="form-control" name="query" value="@ViewBag.Query" placeholder="Enter student name." />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+
+<!--Filter data-->
+@* <form asp-controller="Student" asp-action="FilterAction" method="post">
+
+ 
+    <label>Filter:</label>
+
+    <select asp-items="ViewBag.FilterList" multiple class="form-control">
+        <option value="">Select an option</option>
+    </select>
+    @Html.DropDownListFor(m => m, ViewBag.FilterList as MultiSelectList, "Choose Option", new { @class = "form-control" })
+
+
+    <button type="submit" class="btn btn-primary">Apply Filter</button>
+ 
+
+
+
+</form> *@
+
+@* <div class="mb-3">
+    @Html.LabelFor(m => m, new { @class = "form-label fw-bold" })
+    @Html.DropDownListFor(m => m.Grade, new MultiSelectList(new[] { "A", "B", "C" }), "Choose Option", new { @class = "form-control" }) <!-- DropDownList -->
+    @Html.ValidationMessageFor(m => m.Grade, "", new { @class = "text-danger" })
+</div> *@
+
+    
+
+
+
+
+
+<!-- Create Student Button -->
 @Html.ActionLink("Create New Student", "Create", "Student", null, new { @class = "btn btn-success mb-3" })
 
-<table class="table table-bordered table-striped">
-    <thead class="thead-dark">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Email ID</th>
-            <th>Gender</th>
-            <th>Birthday</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
 
-    <tbody>
-        @foreach (var student in Model)
-        {
+@if (ViewBag.Message != null)
+{
+    <div class="alert @(ViewBag.Message.Contains("success") ? "alert-success" : "alert-danger")">
+        @ViewBag.Message
+    </div>
+}
+
+<div>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
             <tr>
-                <td>@Html.DisplayFor(m => student.StudentRegistrationId)</td>
-                <td>@Html.DisplayFor(m => student.StudentName)</td>
-                <td>@Html.DisplayFor(m => student.StudentAge)</td>
-                <td>@Html.DisplayFor(m => student.StudentEmailId)</td>
-                <td>@Html.DisplayFor(m => student.StudentGender)</td>
-                <td>@Html.DisplayFor(m => student.StudentBirthday)</td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", "Student", new { id = student.StudentRegistrationId }, new { @class = "btn btn-primary" })
-                    @Html.ActionLink("Delete", "Delete", "Student", new { id = student.StudentRegistrationId }, new { @class = "btn btn-danger", onclick = "return confirm('Are you sure you want to delete this student?');" })
-                </td>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email ID</th>
+                <th>Gender</th>
+                <th>Birthday</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => student.StudentName)</td>
+                    <td>@Html.DisplayFor(m => student.StudentAge)</td>
+                    <td>@Html.DisplayFor(m => student.StudentEmailId)</td>
+                    <td>@Html.DisplayFor(m => student.StudentGender)</td>
+                    <td>@Html.DisplayFor(m => student.StudentBirthday)</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "Student", new { id = student.StudentRegistrationId }, new { @class = "btn btn-primary" , onclick="return confirm('Press Ok to edit !!!')"})
+                        @Html.ActionLink("Delete", "Delete", "Student", new { id = student.StudentRegistrationId }, new { @class = "btn btn-danger", onclick = "return confirm('Are you sure you want to delete this student?');" })
+                        @if ( !String.IsNullOrEmpty(student.FileName))
+                        {
+                           @*  <a href="@Url.Action("ShowFile", "Student", new { fileName = student.FileName  })"
+                               class="btn btn-primary">
+                                <i class="fas fa-download"></i> Download File
+                            </a> *@
+
+
+                            <a href="@Url.Action("Download", "Student", new { id = student.StudentRegistrationId })"
+                               class="btn btn-primary">
+                                <i class="fas carousel-fade fa-download"></i> download 
+                            </a>   
+
+                        }
+
+                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+   
+
+</div>
+
+                            

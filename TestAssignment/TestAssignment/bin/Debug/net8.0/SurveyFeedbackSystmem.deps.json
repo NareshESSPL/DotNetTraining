@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "SurveyFeedbackSystmem/1.0.0": {
+        "runtime": {
+          "SurveyFeedbackSystmem.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SurveyFeedbackSystmem/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
