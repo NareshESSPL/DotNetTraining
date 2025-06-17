@@ -23,7 +23,6 @@ namespace TestApp.Controllers
             _configuration = configuration;
             _employeeDAL = new EmployeeDAL(_configuration);
         }
-
         public IActionResult Index()
         {
             var employees = _employeeDAL.GetEmployees();
@@ -37,6 +36,7 @@ namespace TestApp.Controllers
             return View();
         }
 
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult Submit(Employee employee)
         {
@@ -50,7 +50,7 @@ namespace TestApp.Controllers
             if (ModelState.IsValid)
             {
                 //Buffered Model Binding – Loads the entire file into memory before processing.
-                
+
                 //Option 1 upload to a folder in hosted server
                 if (employee.EmployeeImage != null && employee.EmployeeImage.Length > 0)
                 {
@@ -67,6 +67,8 @@ namespace TestApp.Controllers
 
                     employee.FileName = fileFullName;
                 }
+
+                ModelState.AddModelError("EmployeeImage", "Please upload a valid file.");
 
                 //Option 2 upload to a column in DB
                 if (employee.IDImage != null && employee.IDImage.Length > 0)
@@ -140,7 +142,7 @@ namespace TestApp.Controllers
                 employees.Add(employee);
             }
 
-            var dtGrades = ds.Tables[0];
+            var dtGrades = ds.Tables[1];
             foreach (DataRow dr in dtGrades.Rows)
             {
                 var grade = new GradeViewModel();
