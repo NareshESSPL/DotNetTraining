@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mrutyunjaya\\Desktop\\DotNetProject\\EFCoreExample\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2C75599C-8842-4152-BDF4-D2C959473CD8}|EFCoreExample\\EFCoreExample.csproj|c:\\users\\mrutyunjaya\\desktop\\dotnetproject\\efcoreexample\\efcoreexample\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C75599C-8842-4152-BDF4-D2C959473CD8}|EFCoreExample\\EFCoreExample.csproj|solutionrelative:efcoreexample\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C75599C-8842-4152-BDF4-D2C959473CD8}|EFCoreExample\\EFCoreExample.csproj|c:\\users\\mrutyunjaya\\desktop\\dotnetproject\\efcoreexample\\efcoreexample\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C75599C-8842-4152-BDF4-D2C959473CD8}|EFCoreExample\\EFCoreExample.csproj|solutionrelative:efcoreexample\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C75599C-8842-4152-BDF4-D2C959473CD8}|EFCoreExample\\EFCoreExample.csproj|c:\\users\\mrutyunjaya\\desktop\\dotnetproject\\efcoreexample\\efcoreexample\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C75599C-8842-4152-BDF4-D2C959473CD8}|EFCoreExample\\EFCoreExample.csproj|solutionrelative:efcoreexample\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C75599C-8842-4152-BDF4-D2C959473CD8}|EFCoreExample\\EFCoreExample.csproj|c:\\users\\mrutyunjaya\\desktop\\dotnetproject\\efcoreexample\\efcoreexample\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C75599C-8842-4152-BDF4-D2C959473CD8}|EFCoreExample\\EFCoreExample.csproj|solutionrelative:efcoreexample\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C75599C-8842-4152-BDF4-D2C959473CD8}|EFCoreExample\\EFCoreExample.csproj|c:\\users\\mrutyunjaya\\desktop\\dotnetproject\\efcoreexample\\efcoreexample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C75599C-8842-4152-BDF4-D2C959473CD8}|EFCoreExample\\EFCoreExample.csproj|solutionrelative:efcoreexample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C75599C-8842-4152-BDF4-D2C959473CD8}|EFCoreExample\\EFCoreExample.csproj|c:\\users\\mrutyunjaya\\desktop\\dotnetproject\\efcoreexample\\efcoreexample\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2C75599C-8842-4152-BDF4-D2C959473CD8}|EFCoreExample\\EFCoreExample.csproj|solutionrelative:efcoreexample\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\mrutyunjaya\\Desktop\\DotNetProject\\EFCoreExample\\EFCoreExample\\Views\\User\\Index.cshtml",
+              "RelativeDocumentMoniker": "EFCoreExample\\Views\\User\\Index.cshtml",
+              "ToolTip": "C:\\Users\\mrutyunjaya\\Desktop\\DotNetProject\\EFCoreExample\\EFCoreExample\\Views\\User\\Index.cshtml",
+              "RelativeToolTip": "EFCoreExample\\Views\\User\\Index.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAgwBUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-18T12:11:08.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\mrutyunjaya\\Desktop\\DotNetProject\\EFCoreExample\\EFCoreExample\\appsettings.json",
+              "RelativeDocumentMoniker": "EFCoreExample\\appsettings.json",
+              "ToolTip": "C:\\Users\\mrutyunjaya\\Desktop\\DotNetProject\\EFCoreExample\\EFCoreExample\\appsettings.json",
+              "RelativeToolTip": "EFCoreExample\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-18T11:59:24.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mrutyunjaya\\Desktop\\DotNetProject\\EFCoreExample\\EFCoreExample\\Program.cs",
+              "RelativeDocumentMoniker": "EFCoreExample\\Program.cs",
+              "ToolTip": "C:\\Users\\mrutyunjaya\\Desktop\\DotNetProject\\EFCoreExample\\EFCoreExample\\Program.cs",
+              "RelativeToolTip": "EFCoreExample\\Program.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAzwA8AAABjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T11:56:00.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\mrutyunjaya\\Desktop\\DotNetProject\\EFCoreExample\\EFCoreExample\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "EFCoreExample\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\mrutyunjaya\\Desktop\\DotNetProject\\EFCoreExample\\EFCoreExample\\Controllers\\UserController.cs",
+              "RelativeToolTip": "EFCoreExample\\Controllers\\UserController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T11:47:23.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\mrutyunjaya\\Desktop\\DotNetProject\\EFCoreExample\\EFCoreExample\\Models\\User.cs",
+              "RelativeDocumentMoniker": "EFCoreExample\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\mrutyunjaya\\Desktop\\DotNetProject\\EFCoreExample\\EFCoreExample\\Models\\User.cs",
+              "RelativeToolTip": "EFCoreExample\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T11:46:14.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\mrutyunjaya\\Desktop\\DotNetProject\\EFCoreExample\\EFCoreExample\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "EFCoreExample\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\mrutyunjaya\\Desktop\\DotNetProject\\EFCoreExample\\EFCoreExample\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "EFCoreExample\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T11:45:15.72Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
