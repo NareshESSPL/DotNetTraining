@@ -1,0 +1,15 @@
+C:\Users\adityam\source\repos\testt\DATA\bin\Debug\net8.0\DATA.deps.json
+C:\Users\adityam\source\repos\testt\DATA\bin\Debug\net8.0\DATA.dll
+C:\Users\adityam\source\repos\testt\DATA\bin\Debug\net8.0\DATA.pdb
+C:\Users\adityam\source\repos\testt\DATA\bin\Debug\net8.0\Entity.dll
+C:\Users\adityam\source\repos\testt\DATA\bin\Debug\net8.0\Entity.pdb
+C:\Users\adityam\source\repos\testt\DATA\obj\Debug\net8.0\DATA.csproj.AssemblyReference.cache
+C:\Users\adityam\source\repos\testt\DATA\obj\Debug\net8.0\DATA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adityam\source\repos\testt\DATA\obj\Debug\net8.0\DATA.AssemblyInfoInputs.cache
+C:\Users\adityam\source\repos\testt\DATA\obj\Debug\net8.0\DATA.AssemblyInfo.cs
+C:\Users\adityam\source\repos\testt\DATA\obj\Debug\net8.0\DATA.csproj.CoreCompileInputs.cache
+C:\Users\adityam\source\repos\testt\DATA\obj\Debug\net8.0\DATA.csproj.Up2Date
+C:\Users\adityam\source\repos\testt\DATA\obj\Debug\net8.0\DATA.dll
+C:\Users\adityam\source\repos\testt\DATA\obj\Debug\net8.0\refint\DATA.dll
+C:\Users\adityam\source\repos\testt\DATA\obj\Debug\net8.0\DATA.pdb
+C:\Users\adityam\source\repos\testt\DATA\obj\Debug\net8.0\ref\DATA.dll

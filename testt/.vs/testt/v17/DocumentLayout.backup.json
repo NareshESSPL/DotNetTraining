@@ -1,0 +1,151 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\adityam\\source\\repos\\testt\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{433574DF-665E-42F7-BEA4-9285A8F700D8}|DATA\\DATA.csproj|c:\\users\\adityam\\source\\repos\\testt\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{433574DF-665E-42F7-BEA4-9285A8F700D8}|DATA\\DATA.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF41728C-DB04-4FE4-9C84-FEF2F458725B}|Entity\\Entity.csproj|c:\\users\\adityam\\source\\repos\\testt\\entity\\invoices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF41728C-DB04-4FE4-9C84-FEF2F458725B}|Entity\\Entity.csproj|solutionrelative:entity\\invoices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C3787E3-BEE5-4077-A8BD-B4B7496867B2}|testt\\testt.csproj|c:\\users\\adityam\\source\\repos\\testt\\testt\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C3787E3-BEE5-4077-A8BD-B4B7496867B2}|testt\\testt.csproj|solutionrelative:testt\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C3787E3-BEE5-4077-A8BD-B4B7496867B2}|testt\\testt.csproj|c:\\users\\adityam\\source\\repos\\testt\\testt\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C3787E3-BEE5-4077-A8BD-B4B7496867B2}|testt\\testt.csproj|solutionrelative:testt\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C3787E3-BEE5-4077-A8BD-B4B7496867B2}|testt\\testt.csproj|c:\\users\\adityam\\source\\repos\\testt\\testt\\testt.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2C3787E3-BEE5-4077-A8BD-B4B7496867B2}|testt\\testt.csproj|solutionrelative:testt\\testt.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C3787E3-BEE5-4077-A8BD-B4B7496867B2}|testt\\testt.csproj|c:\\users\\adityam\\source\\repos\\testt\\testt\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2C3787E3-BEE5-4077-A8BD-B4B7496867B2}|testt\\testt.csproj|solutionrelative:testt\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C3787E3-BEE5-4077-A8BD-B4B7496867B2}|testt\\testt.csproj|c:\\users\\adityam\\source\\repos\\testt\\testt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C3787E3-BEE5-4077-A8BD-B4B7496867B2}|testt\\testt.csproj|solutionrelative:testt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\adityam\\source\\repos\\testt\\testt\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "testt\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\adityam\\source\\repos\\testt\\testt\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "testt\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-18T12:02:24.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\adityam\\source\\repos\\testt\\testt\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "testt\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\adityam\\source\\repos\\testt\\testt\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "testt\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAYwBYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T11:55:02.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\adityam\\source\\repos\\testt\\testt\\appsettings.json",
+              "RelativeDocumentMoniker": "testt\\appsettings.json",
+              "ToolTip": "C:\\Users\\adityam\\source\\repos\\testt\\testt\\appsettings.json",
+              "RelativeToolTip": "testt\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-18T11:54:38.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "testt",
+              "DocumentMoniker": "C:\\Users\\adityam\\source\\repos\\testt\\testt\\testt.csproj",
+              "RelativeDocumentMoniker": "testt\\testt.csproj",
+              "ToolTip": "C:\\Users\\adityam\\source\\repos\\testt\\testt\\testt.csproj",
+              "RelativeToolTip": "testt\\testt.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-18T11:54:04.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\adityam\\source\\repos\\testt\\testt\\Program.cs",
+              "RelativeDocumentMoniker": "testt\\Program.cs",
+              "ToolTip": "C:\\Users\\adityam\\source\\repos\\testt\\testt\\Program.cs",
+              "RelativeToolTip": "testt\\Program.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA1wAwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T11:53:45.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\adityam\\source\\repos\\testt\\DATA\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "DATA\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\adityam\\source\\repos\\testt\\DATA\\AppDbContext.cs",
+              "RelativeToolTip": "DATA\\AppDbContext.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAgwA4AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T11:51:33.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Invoices.cs",
+              "DocumentMoniker": "C:\\Users\\adityam\\source\\repos\\testt\\Entity\\Invoices.cs",
+              "RelativeDocumentMoniker": "Entity\\Invoices.cs",
+              "ToolTip": "C:\\Users\\adityam\\source\\repos\\testt\\Entity\\Invoices.cs",
+              "RelativeToolTip": "Entity\\Invoices.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAawAoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T11:48:24.356Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
