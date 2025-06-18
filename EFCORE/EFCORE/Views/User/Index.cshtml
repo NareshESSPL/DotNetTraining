@@ -1,0 +1,38 @@
+﻿
+
+@model IEnumerable<EFCORE.Entity.User>
+
+@{
+    ViewData["Title"] = "User List";
+}
+
+<h1>User List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>User Name</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @(item.IsActive ? "Active" : "Inactive")
+                </td>
+                <td>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
