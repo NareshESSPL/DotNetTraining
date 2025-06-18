@@ -1,0 +1,23 @@
+Case Study: Employee Management System
+In an Employee Management System, we have various types of employees like PermanentEmployee and ContractEmployee. We'll demonstrate how virtual methods, abstract methods, and method overloading can be utilized in this scenario.
+
+1. Virtual Methods
+These allow a base class to define a method that can be overridden in a derived class to provide a specific implementation.
+
+  The virtual method in the base Employee class is overridden in derived classes.
+
+  This provides dynamic polymorphism, allowing behavior to vary at runtime.
+
+2. Abstract Methods
+These define a method signature in the base class that must be implemented in derived classes.
+
+   The abstract method enforces derived classes to provide their specific implementation of CalculateSalary.
+
+   This achieves strict polymorphism.
+
+3. Method Overloading
+This allows multiple methods with the same name but different parameter lists within the same class.
+
+The same method GenerateReport is overloaded to support various input parameters.
+
+This enables compile-time polymorphism or static polymorphism.
