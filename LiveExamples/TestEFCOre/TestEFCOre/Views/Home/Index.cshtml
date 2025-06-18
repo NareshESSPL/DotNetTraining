@@ -1,0 +1,13 @@
+﻿@using TestEFCore.Entity
+@model List<User>
+
+@{
+    <table>
+    @foreach(var user in Model)
+    {
+        <tr>
+        <td>@user.UserName</td>
+        </tr>
+    }
+    </table>
+}
