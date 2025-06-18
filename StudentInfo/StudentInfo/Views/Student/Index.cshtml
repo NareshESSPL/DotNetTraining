@@ -92,7 +92,13 @@
                             <a href="@Url.Action("Download", "Student", new { id = student.StudentRegistrationId })"
                                class="btn btn-primary">
                                 <i class="fas carousel-fade fa-download"></i> download 
-                            </a>   
+                            </a>
+
+                            <a href="@Url.Action("DeleteFile","Student", new { id = student.StudentRegistrationId })"
+                                class="btn btn-primary">
+                                 Delete File
+                                
+                            </a>
 
                         }
 

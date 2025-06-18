@@ -189,6 +189,30 @@ namespace StudentInfo.Controllers
             
         }
 
+        // delete the file---------
+        public IActionResult DeleteFile(int id)
+        {
+            var student = _studentDAL.GetStudent(id);
+            if(student != null)
+            {
+                var filePath= Path.Combine("wwwroot/downloads/", student.FileName);
+                if (System.IO.File.Exists(filePath))
+                {
+                    System.IO.File.Delete(filePath);
+                }
+
+                student.FileName = student.IDFileName = string.Empty;
+
+                _studentDAL.AddStudent(student);
+
+                return RedirectToAction("Index");
+
+
+            }
+
+            return RedirectToAction("Index");
+
+        }
         private IEnumerable<SelectListItem> GetGenderOptions()
         {
             return new List<SelectListItem>

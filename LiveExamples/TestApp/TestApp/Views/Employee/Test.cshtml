@@ -1,6 +1,5 @@
 ﻿@model (List<Employee>, List<GradeViewModel>)
 
-
 <h1>Employee List</h1>
 <p>
     @Html.ActionLink("Create New Employee", "Create", "Employee", null, new { @class = "btn btn-primary" })
@@ -47,5 +46,28 @@
         }
     </tbody>
 </table>
+<button onclick="generatePdf()">Convert to PDF</button>
 
+<script>
+    async function generatePdf() {
+        let fullHtml = document.documentElement.outerHTML;
 
+        let response = await fetch("/FileHandler/ExportToPdf", {
+            method: "POST", 
+            'Content-Type': 'text/plain',
+                body: fullHtml
+        });
+
+        if (response.ok) {
+            let blob = await response.blob();
+            let url = URL.createObjectURL(blob);
+            let link = document.createElement("a");
+            link.href = url;
+            link.download = "document.pdf";
+            document.body.appendChild(link);
+            link.click();
+        } else {
+            alert("Failed to generate PDF.");
+        }
+    }
+</script>

@@ -50,6 +50,25 @@ namespace TestApp.DataLayer
             return employees;
         }
 
+        public DataTable GetEmployeesAsTable()
+        {
+            var dtEmployee = new DataTable();
+
+            using (var sqlCon = new SqlConnection(_connectionstring))
+            {
+                using (var sqlCmd = new SqlCommand("Select Id, Name, Age From Employee", sqlCon))
+                {
+                    sqlCmd.CommandType = CommandType.Text;
+
+                    var adp = new SqlDataAdapter(sqlCmd);
+
+                    adp.Fill(dtEmployee);
+                }
+            }
+
+            return dtEmployee;
+        }
+
         public void AddEmployee(Employee employee)
         {
             using (var sqlCon = new SqlConnection(_connectionstring))
@@ -61,9 +80,21 @@ namespace TestApp.DataLayer
                     sqlCmd.Parameters.Add(new SqlParameter("@Name", employee.Name));
                     sqlCmd.Parameters.Add(new SqlParameter("@Age", employee.Age));
                     sqlCmd.Parameters.Add(new SqlParameter("@Gender", employee.Gender));
-                    sqlCmd.Parameters.Add(new SqlParameter("@FileName", employee.FileName));
-                    sqlCmd.Parameters.Add(new SqlParameter("@IDFileName", employee.IDImageFileName));
-                    sqlCmd.Parameters.Add(new SqlParameter("@IDImage", employee.IDImageAsByteArray));
+                    
+                    if (employee.FileName == null)
+                        sqlCmd.Parameters.Add(new SqlParameter("@FileName", DBNull.Value));
+                    else
+                        sqlCmd.Parameters.Add(new SqlParameter("@FileName", employee.FileName));
+
+                    if (employee.IDImageFileName == null)
+                        sqlCmd.Parameters.Add(new SqlParameter("@IDFileName", DBNull.Value));
+                    else
+                        sqlCmd.Parameters.Add(new SqlParameter("@IDFileName", employee.IDImageFileName));
+
+                    if (employee.IDImageAsByteArray == null)
+                        sqlCmd.Parameters.Add(new SqlParameter("@IDImage", System.Data.SqlTypes.SqlBinary.Null));
+                    else
+                        sqlCmd.Parameters.Add(new SqlParameter("@IDImage", employee.IDImageAsByteArray));
 
                     sqlCon.Open();
 
@@ -144,6 +175,7 @@ namespace TestApp.DataLayer
 
             return (employees, grades);
         }
+
         public DataSet GetEmployeesAndGradesInDs()
         {
             using (var sqlCon = new SqlConnection(_connectionstring))
@@ -161,6 +193,29 @@ namespace TestApp.DataLayer
 
                         return ds;
                     }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dt"></param>
+        public void BulkInsert(DataTable dt)
+        {
+            using (var conn = new SqlConnection(_connectionstring))
+            {
+                conn.Open();
+                using (var bulkCopy = new SqlBulkCopy(conn))
+                {
+                    bulkCopy.DestinationTableName = "Employee";
+
+                    foreach (DataColumn col in dt.Columns)
+                    {
+                        bulkCopy.ColumnMappings.Add(col.ColumnName, col.ColumnName);
+                    }
+
+                    bulkCopy.WriteToServer(dt);
                 }
             }
         }
