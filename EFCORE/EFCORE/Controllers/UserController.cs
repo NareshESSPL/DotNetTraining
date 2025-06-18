@@ -8,7 +8,7 @@ using System.Linq;
 
 public class UserController : Controller
 {
-    private readonly AppDBContext _context = new AppDBContext();
+    private readonly AppDBContext _context;
 
     public UserController(AppDBContext context)
     {
