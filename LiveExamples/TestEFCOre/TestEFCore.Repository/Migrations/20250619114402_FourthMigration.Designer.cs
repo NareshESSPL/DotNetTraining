@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestEFCore.Repository;
 
@@ -11,9 +12,11 @@ using TestEFCore.Repository;
 namespace TestEFCore.Repository.Migrations
 {
     [DbContext(typeof(TestEFCoreDbContext))]
-    partial class TestEFCoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250619114402_FourthMigration")]
+    partial class FourthMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

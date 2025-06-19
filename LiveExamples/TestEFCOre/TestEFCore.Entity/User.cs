@@ -24,6 +24,8 @@ namespace TestEFCore.Entity
         public DateTime ModifiedOn { get; set; }
 
         public virtual IEnumerable<Device> Devices { get; set; }
+
+        public virtual IEnumerable<UserRole> UserRoles { get; set; }
     }
 
     public class Role
@@ -31,6 +33,8 @@ namespace TestEFCore.Entity
         public int RoleID { get; set; }
 
         public string RoleName { get; set; }
+
+        public virtual IEnumerable<UserRole> UserRoles { get; set; }
 
     }
 
@@ -41,6 +45,10 @@ namespace TestEFCore.Entity
         public long UserID { get; set; }
 
         public int RoleID { get; set; }
+
+        public virtual ESSPLUser User { get; set; }
+
+        public virtual Role Role { get; set; }
 
     }
 
