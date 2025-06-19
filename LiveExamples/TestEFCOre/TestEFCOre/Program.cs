@@ -13,6 +13,8 @@ namespace TestEFCore
             // Add services to the container.
             builder.Services.AddRazorPages();
 
+            //builder.Services.AddSingleton<IUserManager, UserManager>();
+
             builder.Services.AddTransient<IUserManager, UserManager>();
 
             builder.Services.AddDbContext<TestEFCoreDbContext>(options =>

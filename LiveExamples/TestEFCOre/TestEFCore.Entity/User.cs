@@ -3,9 +3,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TestEFCore.Entity
 {
-    public class User
+    [Table("User")]
+    public class ESSPLUser
     {
         //primery key column by convention
+        [Key]
         public long UserID { get; set; }
 
         [Required] //Not null
@@ -18,6 +20,10 @@ namespace TestEFCore.Entity
 
         [Required]
         public bool IsActive { get; set; }
+
+        public DateTime ModifiedOn { get; set; }
+
+        public virtual IEnumerable<Device> Devices { get; set; }
     }
 
     public class Role
@@ -40,8 +46,15 @@ namespace TestEFCore.Entity
 
     public class Device
     {
+        [Key]
         public int DeviceID { get; set; }
+
         public long UserID { get; set; }
+
+        [Required]
+        [MaxLength(100)]
         public string DeviceName { get; set; }
+
+        public virtual ESSPLUser User { get; set; }
     }
 }

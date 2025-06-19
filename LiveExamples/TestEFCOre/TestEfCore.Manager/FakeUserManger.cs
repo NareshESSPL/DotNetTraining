@@ -12,12 +12,12 @@ namespace TestEfCore.Manager
             _testEFCoreDbContext = testEFCoreDbContext;
         }
 
-        public List<User> GetUsers()
+        public List<ESSPLUser> GetUsers()
         {
-            return new List<User> 
+            return new List<ESSPLUser> 
             { 
-                new User{UserName = "Naresh" },
-                new User{UserName = "Suresh"}
+                new ESSPLUser{UserName = "Naresh" },
+                new ESSPLUser{UserName = "Suresh"}
             };
         }
     }

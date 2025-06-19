@@ -12,7 +12,7 @@ namespace TestEfCore.Manager
             _testEFCoreDbContext = testEFCoreDbContext;
         }
 
-        public List<User> GetUsers()
+        public List<ESSPLUser> GetUsers()
         {
             var users = _testEFCoreDbContext.User.ToList();
 

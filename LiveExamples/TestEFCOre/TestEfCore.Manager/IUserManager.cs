@@ -9,6 +9,6 @@ namespace TestEfCore.Manager
 {
     public interface IUserManager
     {
-        public List<User> GetUsers();
+        public List<ESSPLUser> GetUsers();
     }
 }
