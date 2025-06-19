@@ -1,0 +1,19 @@
+﻿@model LoginRequestDTO
+
+<h2>Login</h2>
+
+<form asp-action="Login" method="post">
+    <div class="form-group">
+        @Html.LabelFor(m => m.UniqueId)
+        @Html.TextBoxFor(m => m.UniqueId, new { @class = "form-control", placeholder = "Please provide UserName or PhoneNo or EmailID" })
+        @Html.ValidationMessageFor(m => m.UniqueId, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password)
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Enter password" })
+        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>

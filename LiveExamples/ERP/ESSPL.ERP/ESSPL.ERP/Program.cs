@@ -1,8 +1,10 @@
+using ESSPL.Manager.IdentityManagement;
+using System;
+using System.Security.Principal;
 using Microsoft.EntityFrameworkCore;
-using TestEfCore.Manager;
-using TestEFCore.Repository;
+using ESSPL.Repository;
 
-namespace TestEFCore
+namespace ESSPL.ERP
 {
     public class Program
     {
@@ -13,10 +15,13 @@ namespace TestEFCore
             // Add services to the container.
             builder.Services.AddRazorPages();
 
-            builder.Services.AddTransient<IUserManager, UserManager>();
+            //Dependency Injection
+            builder.Services.AddTransient<IIdentityManager, IdentityManager>();
 
-            builder.Services.AddDbContext<TestEFCoreDbContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("ConString")));
+
+            builder.Services.AddDbContext<ESSPLERPDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("ConString")));
+
 
             var app = builder.Build();
 

@@ -1,20 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TestEfCore.Manager;
 using TestEFCore.Repository;
 
 namespace TestEFCore
 {
     public class HomeController : Controller
     {
-        private TestEFCoreDbContext _testEFCoreDbContext { get; set; }
+        private readonly IUserManager _userManager;
 
-        public HomeController(TestEFCoreDbContext testEFCoreDbContext)
+        public HomeController(IUserManager userManager)
         {
-            _testEFCoreDbContext = testEFCoreDbContext;
+            _userManager = userManager;
         }
 
         public IActionResult Index()
-        {
-             var users = _testEFCoreDbContext.User.ToList();
+        {          
+            var users = _userManager.GetUsers();
 
             return View(users);
         }
