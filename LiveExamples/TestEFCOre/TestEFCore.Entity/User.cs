@@ -1,9 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
+using System.Xml.Linq;
+using System;
 
 namespace TestEFCore.Entity
 {
     [Table("User")]
+
+    [Index(nameof(UserName), nameof(UserID), Name = "IX_User_Username_UserID", AllDescending = true)]
     public class ESSPLUser
     {
         //primery key column by convention
@@ -13,7 +18,7 @@ namespace TestEFCore.Entity
         [Required] //Not null
         [MaxLength(100)]
         public string UserName { get; set; }
-
+        
         [Required] //Not null
         [MaxLength(20)]
         public string Password { get; set; }
@@ -21,8 +26,8 @@ namespace TestEFCore.Entity
         [Required]
         public bool IsActive { get; set; }
 
+        [Required]
         public DateTime ModifiedOn { get; set; }
-
         public virtual IEnumerable<Device> Devices { get; set; }
 
         public virtual IEnumerable<UserRole> UserRoles { get; set; }
@@ -35,7 +40,6 @@ namespace TestEFCore.Entity
         public string RoleName { get; set; }
 
         public virtual IEnumerable<UserRole> UserRoles { get; set; }
-
     }
 
     public class UserRole
@@ -65,4 +69,16 @@ namespace TestEFCore.Entity
 
         public virtual ESSPLUser User { get; set; }
     }
+    
+    //Self referencing
+    public class Employee
+    {
+        public int EmployeeId { get; set; }
+        public string Name { get; set; }
+
+        public int? ManagerId { get; set; } 
+        public Employee Manager { get; set; }  // Navigation to manager
+        public ICollection<Employee> Reportees { get; set; } = new List<Employee>();  // Navigation to subordinates
+    }
+
 }

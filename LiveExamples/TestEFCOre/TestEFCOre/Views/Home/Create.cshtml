@@ -1,0 +1,54 @@
+﻿@model TestEFCore.DTO.UserWithRoleDto
+
+@{
+    ViewBag.Title = "Create User";
+}
+
+<h2>Create User</h2>
+
+@using (Html.BeginForm("Create", "Home", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.UserID)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UserName)
+        @Html.TextBoxFor(model => model.UserName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.EmailID)
+        @Html.TextBoxFor(model => model.EmailID, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.EmailID, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Password)
+        @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-check">
+        @Html.CheckBoxFor(model => model.IsActive, new { @class = "form-check-input" })
+        @Html.LabelFor(model => model.IsActive, new { @class = "form-check-label" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SelectedRoleIDs, new { @class = "control-label" })
+        @Html.ListBoxFor(model => model.SelectedRoleIDs, (IEnumerable<SelectListItem>)ViewBag.Roles, new { @class = "form-control", size = 5 })
+    </div>
+
+    <div class="form-group mt-2">
+        @Html.Label("Role Name")
+        @Html.TextBoxFor(model => model.NewRoleName,null, new { @class = "form-control", placeholder = "Enter new role name" })
+        <small class="text-muted">If the role doesn’t exist, it will be created</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Create</button>
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

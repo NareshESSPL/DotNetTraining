@@ -35,7 +35,6 @@ namespace TestEFCore.Repository
               .HasOne(d => d.Role)
               .WithMany(u => u.UserRoles)
               .HasForeignKey(d => d.RoleID);
-
         }
     }
 }

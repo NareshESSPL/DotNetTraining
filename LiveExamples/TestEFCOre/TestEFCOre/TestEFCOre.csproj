@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TestEFCore.DTO\TestEFCore.DTO.csproj" />
     <ProjectReference Include="..\TestEfCore.Manager\TestEfCore.Manager.csproj" />
     <ProjectReference Include="..\TestEFCore.Repository\TestEFCore.Repository.csproj" />
   </ItemGroup>
