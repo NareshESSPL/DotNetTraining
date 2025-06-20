@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TestEFCore.DTO
 {
-    public class UserWithRoleDto
+    public class UserWithRoleDTO
     {
         public long UserID { get; set; }
         public string UserName { get; set; }

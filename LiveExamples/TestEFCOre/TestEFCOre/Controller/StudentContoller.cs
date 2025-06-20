@@ -9,13 +9,13 @@ using TestEFCore.Repository;
 
 namespace TestEFCore
 {
-    public class HomeController : Controller
+    public class StudentContoller : Controller
     {
-        private readonly IUserManager _userManager;
+        private readonly IStudentManager _studentManager;
 
-        public HomeController(IUserManager userManager)
+        public StudentContoller(IStudentManager studentManager)
         {
-            _userManager = userManager;
+            _studentManager = studentManager;
         }
 
         public async Task<IActionResult> Index()

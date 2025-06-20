@@ -1,0 +1,36 @@
+﻿@model IEnumerable<TestEFCore.Entity.Student>
+
+<P>
+    @Html.ActionLink("Create New Student", "Create", "Student", null, new { @class = "btn btn-primary" })
+
+</P>
+<table class="table">
+
+
+    <thead>
+        <tr>
+            <th>StudentName</th>
+            <th>Teacher</th>
+            <th>Modified On</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.StudentName</td>
+                <td>
+                    @string.Join(", ", student.StudentTeachers.Select(st => st.Teacher.TeacherName))
+                </td>
+                <td>@student.ModifiedOn.ToString("yyyy-MM-dd")</td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Student", new { id = student.StudentID }, new { @class = "btn btn-warning btn-sm" })
+
+                    @Html.ActionLink("Delete", "Delete", "Student", new { id = student.StudentID }, new { @class = "btn btn-danger btn-sm" })
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,37 @@
+﻿@model TestEFCore.DTO.StudentWithTeacherDTO
+
+@{
+    ViewBag.Title = "Create Student";
+}
+
+<h2>Create User</h2>
+
+@using (Html.BeginForm("Create", "Home", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.StudentID)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.StudentName)
+        @Html.TextBoxFor(model => model.StudentName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.StudentName, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SelectedTeacherIDs, new { @class = "control-label" })
+        @Html.ListBoxFor(model => model.SelectedTeacherIDs, (IEnumerable<SelectListItem>)ViewBag.Teachers, new { @class = "form-control", size = 5 })
+    </div>
+
+    <div class="form-group mt-2">
+        @Html.Label("Role Name")
+        @Html.TextBoxFor(model => model.NewTeacherName,null, new { @class = "form-control", placeholder = "Enter new role name" })
+        <small class="text-muted">If the role doesn’t exist, it will be created</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Create</button>
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
