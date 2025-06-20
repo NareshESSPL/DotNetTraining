@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System.Security.Cryptography.Xml;
 using TestEfCore.Manager;
 using TestEFCore.DTO;
@@ -20,7 +21,9 @@ namespace TestEFCore
 
         public async Task<IActionResult> Index()
         {
-            var users = _userManager.GetUsers();
+            var users = _userManager.GetUsers()
+                .Where(i => i.IsActive)
+                .OrderByDescending(i => i.ModifiedOn);                
 
             return View(users);
         }
@@ -29,11 +32,11 @@ namespace TestEFCore
         {
             ViewBag.Roles = new MultiSelectList(_userManager.GetRoles(), "RoleID", "RoleName");
             
-            return View(new UserWithRoleDto());
+            return View(new UserWithRoleDTO());
         }
 
         [HttpPost]
-        public IActionResult Create(UserWithRoleDto userWithRoleDto)
+        public IActionResult Create(UserWithRoleDTO userWithRoleDto)
         {
             if (ModelState.IsValid)
             {
@@ -84,7 +87,7 @@ namespace TestEFCore
 
                 return RedirectToAction(nameof(Index));
             }
-            return View(new UserWithRoleDto());
+            return View(new UserWithRoleDTO());
         }
 
         public IActionResult Edit(long id)
@@ -93,7 +96,7 @@ namespace TestEFCore
 
             var user = _userManager.GetUserById(id);
 
-            var userWithRoleDto = new UserWithRoleDto()
+            var userWithRoleDto = new UserWithRoleDTO()
             {
                 UserID = user.UserID,
 

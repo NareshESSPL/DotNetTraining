@@ -23,7 +23,7 @@ namespace TestEFCore.DTO
     }
 
 
-    public class UserWithRoleDtoValidator : AbstractValidator<UserWithRoleDto>
+    public class UserWithRoleDtoValidator : AbstractValidator<UserWithRoleDTO>
     {
         public UserWithRoleDtoValidator()
         {

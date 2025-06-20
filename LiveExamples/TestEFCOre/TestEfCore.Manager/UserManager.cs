@@ -18,10 +18,24 @@ namespace TestEfCore.Manager
 
         public List<ESSPLUser> GetUsersWithSelect()
         {
-            var users = _testEFCoreDbContext.User.
-                            Select(u => new ESSPLUser { UserName = u.UserName });
+            var users1 = _testEFCoreDbContext.User.Select(u => u);
 
-            return users.ToList();
+            var users2 = from u in _testEFCoreDbContext.User
+                         select u;
+
+            var users3 = from u in _testEFCoreDbContext.User
+                         join ur in _testEFCoreDbContext.UserRole on u.UserID equals ur.UserID
+                         join r in _testEFCoreDbContext.Role on ur.RoleID equals r.RoleID 
+                         select new 
+                         { 
+                             u.UserID,
+                             r.RoleID,
+                             u.UserName,
+                             r.RoleName
+                         };
+
+
+            return users1.ToList();
         }
 
         public List<ESSPLUser> GetUsersAllLoadingScenario()

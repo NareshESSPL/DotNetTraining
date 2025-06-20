@@ -11,116 +11,116 @@ namespace TestEFCore
 {
     public class StudentContoller : Controller
     {
-        private readonly IStudentManager _studentManager;
+        //private readonly IStudentManager _studentManager;
 
-        public StudentContoller(IStudentManager studentManager)
-        {
-            _studentManager = studentManager;
-        }
+        //public StudentContoller(IStudentManager studentManager)
+        //{
+        //    _studentManager = studentManager;
+        //}
 
-        public async Task<IActionResult> Index()
-        {
-            var users = _userManager.GetUsers();
+        //public async Task<IActionResult> Index()
+        //{
+        //    var users = _userManager.GetUsers();
 
-            return View(users);
-        }
+        //    return View(users);
+        //}
 
-        public IActionResult Create()
-        {
-            ViewBag.Roles = new MultiSelectList(_userManager.GetRoles(), "RoleID", "RoleName");
+        //public IActionResult Create()
+        //{
+        //    ViewBag.Roles = new MultiSelectList(_userManager.GetRoles(), "RoleID", "RoleName");
             
-            return View(new UserWithRoleDto());
-        }
+        //    return View(new UserWithRoleDTO());
+        //}
 
-        [HttpPost]
-        public IActionResult Create(UserWithRoleDto userWithRoleDto)
-        {
-            if (ModelState.IsValid)
-            {
-                var user = new ESSPLUser
-                {
-                    UserID = userWithRoleDto.UserID,
+        //[HttpPost]
+        //public IActionResult Create(UserWithRoleDTO userWithRoleDto)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var user = new ESSPLUser
+        //        {
+        //            UserID = userWithRoleDto.UserID,
 
-                    UserName = userWithRoleDto.UserName,
+        //            UserName = userWithRoleDto.UserName,
 
-                    Password = userWithRoleDto.Password,
+        //            Password = userWithRoleDto.Password,
 
-                    IsActive = userWithRoleDto.IsActive,
+        //            IsActive = userWithRoleDto.IsActive,
 
-                    ModifiedOn = DateTime.UtcNow
-                };
+        //            ModifiedOn = DateTime.UtcNow
+        //        };
 
-                if (userWithRoleDto.SelectedRoleIDs.Count > 0)
-                {
-                    var userRoles = new List<UserRole>();
+        //        if (userWithRoleDto.SelectedRoleIDs.Count > 0)
+        //        {
+        //            var userRoles = new List<UserRole>();
 
-                    foreach (var roleId in userWithRoleDto.SelectedRoleIDs)
-                    {
-                        var userRole = new UserRole() { RoleID = roleId };
+        //            foreach (var roleId in userWithRoleDto.SelectedRoleIDs)
+        //            {
+        //                var userRole = new UserRole() { RoleID = roleId };
 
-                        userRoles.Add(userRole);
-                    }
+        //                userRoles.Add(userRole);
+        //            }
 
-                    user.UserRoles = userRoles;
+        //            user.UserRoles = userRoles;
 
-                }
-                else
-                {
-                    var role = new Role() { RoleName = userWithRoleDto.NewRoleName };
+        //        }
+        //        else
+        //        {
+        //            var role = new Role() { RoleName = userWithRoleDto.NewRoleName };
 
-                    var userRole = new UserRole() { Role = role };
+        //            var userRole = new UserRole() { Role = role };
 
-                    user.UserRoles = new UserRole[] { userRole };
-                }
+        //            user.UserRoles = new UserRole[] { userRole };
+        //        }
 
-                if (user.UserID == 0)
-                {
-                    _userManager.InsertUser(user);
-                }
-                else
-                {
-                    _userManager.UpdateUser(user);
-                }
+        //        if (user.UserID == 0)
+        //        {
+        //            _userManager.InsertUser(user);
+        //        }
+        //        else
+        //        {
+        //            _userManager.UpdateUser(user);
+        //        }
 
-                return RedirectToAction(nameof(Index));
-            }
-            return View(new UserWithRoleDto());
-        }
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    return View(new UserWithRoleDTO());
+        //}
 
-        public IActionResult Edit(long id)
-        {
-            ViewBag.Roles = new MultiSelectList(_userManager.GetRoles(), "RoleID", "RoleName");
+        //public IActionResult Edit(long id)
+        //{
+        //    ViewBag.Roles = new MultiSelectList(_userManager.GetRoles(), "RoleID", "RoleName");
 
-            var user = _userManager.GetUserById(id);
+        //    var user = _userManager.GetUserById(id);
 
-            var userWithRoleDto = new UserWithRoleDto()
-            {
-                UserID = user.UserID,
+        //    var userWithRoleDto = new UserWithRoleDTO()
+        //    {
+        //        UserID = user.UserID,
 
-                UserName = user.UserName,
+        //        UserName = user.UserName,
 
-                Password = user.Password,
+        //        Password = user.Password,
 
-                IsActive = user.IsActive
-            };
+        //        IsActive = user.IsActive
+        //    };
 
-            foreach(var userRole in user.UserRoles)
-            {
-                userWithRoleDto.SelectedRoleIDs.Add(userRole.RoleID);
-            }
+        //    foreach(var userRole in user.UserRoles)
+        //    {
+        //        userWithRoleDto.SelectedRoleIDs.Add(userRole.RoleID);
+        //    }
 
-            return View("Create", userWithRoleDto);
-        }
+        //    return View("Create", userWithRoleDto);
+        //}
 
-        public IActionResult Delete(long id)
-        {
-            _userManager.DeleteUser(id);
+        //public IActionResult Delete(long id)
+        //{
+        //    _userManager.DeleteUser(id);
 
-            ViewBag.Roles = new MultiSelectList(_userManager.GetRoles(), "RoleID", "RoleName");
+        //    ViewBag.Roles = new MultiSelectList(_userManager.GetRoles(), "RoleID", "RoleName");
 
-            var users = _userManager.GetUsers();
+        //    var users = _userManager.GetUsers();
 
-            return View("Index", users);
-        }
+        //    return View("Index", users);
+        //}
     }
 }
