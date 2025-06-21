@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 using TestEFCore.Entity;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace TestEFCore.Repository
 {
@@ -15,8 +17,26 @@ namespace TestEFCore.Repository
         public DbSet<Role> Role { get; set; }
         public DbSet<UserRole> UserRole { get; set; }
 
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            //If you are not using DI and initailize the connection
+            //if (!optionsBuilder.IsConfigured)
+            //{
+            //    optionsBuilder.UseSqlServer("YourConnectionStringHere");
+            //}
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Shadow property
+            //modelBuilder.Entity<ESSPLUser>()
+            //        .Property<DateTime>("ModifiedBy"); 
+
+            //You can define a global filter in your DbContext:
+            //Now every query on User will automatically exclude InActive records.
+            //modelBuilder.Entity<ESSPLUser>().HasQueryFilter(p => !p.IsActive);
+
             //foreign key
             modelBuilder.Entity<Device>()
               .HasOne(d => d.User)

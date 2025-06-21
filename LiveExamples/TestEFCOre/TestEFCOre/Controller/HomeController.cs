@@ -23,7 +23,7 @@ namespace TestEFCore
         {
             var users = _userManager.GetUsers()
                 .Where(i => i.IsActive)
-                .OrderByDescending(i => i.ModifiedOn);                
+                .OrderByDescending(i => i.ModifiedOn).ToList();                
 
             return View(users);
         }

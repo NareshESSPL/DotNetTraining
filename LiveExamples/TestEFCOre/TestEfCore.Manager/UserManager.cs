@@ -105,6 +105,9 @@ namespace TestEfCore.Manager
 
         public void InsertUser(ESSPLUser user)
         {
+            //Setting data for shadow property
+            //_testEFCoreDbContext.Entry(user).Property("ModifiedBy").CurrentValue = DateTime.UtcNow;
+
             _testEFCoreDbContext.Add(user);
             _testEFCoreDbContext.SaveChanges();
         }
@@ -123,7 +126,11 @@ namespace TestEfCore.Manager
             //option 2 Untracked
             _testEFCoreDbContext.Attach(updatedUser);
 
+            //This will run update for all property in DB table
             _testEFCoreDbContext.Entry(updatedUser).State = EntityState.Modified;
+
+            //This will update only specific column
+            _testEFCoreDbContext.Entry(updatedUser).Property(u => u.IsActive).IsModified = true;
 
             _testEFCoreDbContext.SaveChanges();
         }

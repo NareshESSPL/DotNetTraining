@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TestEfCore.Manager;
+using TestEFCore.Entity;
 using TestEFCore.Repository;
 
 namespace TestEFCore
@@ -15,10 +16,23 @@ namespace TestEFCore
 
             //builder.Services.AddSingleton<IUserManager, UserManager>();
 
-            builder.Services.AddTransient<IUserManager, UserManager>();
+            builder.Services.AddTransient<IUserManager, GenericUserManager>();
+            builder.Services.AddTransient<TestEFCore.Repository.IRepository<ESSPLUser>, TestEFCore.Repository.Repository<ESSPLUser>>();
+            builder.Services.AddTransient<TestEFCore.Repository.IRepository<Role>, TestEFCore.Repository.Repository<Role>>();
 
+
+            //DI DBContext with seeding
             builder.Services.AddDbContext<TestEFCoreDbContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("ConString")));
+                    options.UseSqlServer(
+                        builder.Configuration.GetConnectionString("ConString"))
+                                .UseSeeding((context, storeChanged) =>
+                                {
+                                    if (!context.Set<Role>().Any())
+                                    {
+                                        context.Set<Role>().Add(new Role { RoleID = 1, RoleName = "Admin" });
+                                        context.SaveChanges();
+                                    }
+                                }));
 
             var app = builder.Build();
 

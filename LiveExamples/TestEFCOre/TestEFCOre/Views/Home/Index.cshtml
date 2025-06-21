@@ -11,7 +11,7 @@
         <tr>
             <th>UserName</th>
             <th>Is Active</th>
-            <th>Roles</th>
+            @* <th>Roles</th> *@
             <th>Modified On</th>
         </tr>
     </thead>
@@ -21,9 +21,9 @@
             <tr>
                 <td>@user.UserName</td>
                 <td>@user.IsActive</td>
-                <td>
+                @* <td>
                     @string.Join(", ", user.UserRoles.Select(ur => ur.Role.RoleName))
-                </td>
+                </td> *@
                 <td>@user.ModifiedOn.ToString("yyyy-MM-dd")</td>
 
                 <td>

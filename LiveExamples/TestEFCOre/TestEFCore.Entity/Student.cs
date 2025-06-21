@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestEFCore.Entity;
 
 namespace TestEFCore.Entity
 {
@@ -38,6 +39,6 @@ namespace TestEFCore.Entity
         public DateTime ModifiedOn { get; set; } = DateTime.Now;
 
         public Student Student { get; set; }
-        public Teacher Teacher { get; set;}
+        public Teacher Teacher { get; set; }
     }
 }
